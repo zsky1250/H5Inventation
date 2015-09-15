@@ -1,0 +1,67 @@
+body {
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100%;
+    font-weight: 300;
+    font-family: 'Microsoft Yahei',Tahoma,Helvetica,Arial,sans-serif;
+    font-size: 62.5%;
+    line-height: 1.231;
+    -webkit-touch-callout: none;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-box-align: stretch;
+    position: relative;
+}
+body * {
+    text-shadow: none!important;
+}
+* {
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/*“Ù¿÷≤•∑≈*/
+#audio-play {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 200;
+    display: none;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+}
+.off {
+    background-image: url(../images/musicIcon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.main-page.z-current {
+    z-index: 1;
+    display: inline-block;
+}
+/*section*/
+.current-section {
+    opacity: 1;
+}
+.section {
+    border: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: top center;
+    background-size: cover;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    z-index: 0;
+    display: none;
+    -webkit-transform-origin: center center;
+    background: #fff;
+}
