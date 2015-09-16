@@ -1,47 +1,200 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="baidu-site-verification" content="2MKKT6mbuL" />
     <title>邀请函</title>
-    <meta name="keywords" content="Undi公司邀请函" />
+    <meta name="keywords" content="UndI公司邀请函" />
     <meta id="metaDescription" name="description" content="邀请你来参加XXXX" />
-
-
     <META HTTP-EQUIV="pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">
     <META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">
     <META HTTP-EQUIV="expires" CONTENT="0">
-    <meta id="eqMobileViewport" name="viewport" content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true">
-    <link rel="shortcut icon" href="http://as.eqxiu.com/common/favicon.ico" type="image/x-icon" />
-    <script src="http://as.eqxiu.com/boot-css.js"></script>
+    <meta id="需要些JS" name="viewport" content="width=320, initial-scale=1.171875, maximum-scale=1.171875, user-scalable=no" servergenerated="true">
+
+    <link rel="shortcut icon" href="../res/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="../res/css/zUIWX.css"/>
 </head>
 <body>
+<!--微信默认会把网页第一张图片当做分享时的链接封面，-->
+<!--但是这个方法在一些Android机器上不靠谱，最好是调用微信的JSSDK的share接口，在分享前，将用到的缩率信息传进去，但那需要公证号，有访问频率限制-->
 <div id="shareImage" style="display: none;">
-    <img src="http://res.eqxiu.com/group2/M00/4B/86/yq0KXlXw8n-AePxnAAAliBWWx_g656.jpg" />
+    <img src="../res/images/cover.jpg" />
 </div>
-<div class="nr" id="nr">
+<div class="container" id="container">
     <div id="audio-play" class="off">
         <div id="yinfu"></div>
         <audio loop="" src="" id="media" autoplay="" preload></audio>
     </div>
-    <div id="loading" class="loading">
+    <div id="loading" class="loading" style="display:none;">
         <div class="loadbox">
             <div class="loadlogo"></div>
             <div class="loadbg"></div>
         </div>
     </div>
-</div>
-<script src="http://tajs.qq.com/stats?sId=45828183" charset="UTF-8"></script>
-</body>
-<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-<script src="http://cdn.bootcss.com/jquery/2.0.3/jquery.min.js"></script>
-<script src="http://as.eqxiu.com/boot-javascript.js"></script>
-<script>
-    var scene = {id:14483457,code:"k9uqtpDX",name: "邀请函", description: "诚邀贾瑞峰于10月07日晚18:30在西贝阳光海岸333雅间小聚！", pageMode:0,cover:"group2/M00/4B/86/yq0KXlXw8n-AePxnAAAliBWWx_g656.jpg",bgAudio:null,property:'{"eqAdType":1,"hideEqAd":false,"triggerLoop":true,"autoFlipTime":3}',createTime:1441770924000,bizType:0};
 
-    eqShow.bootstrap();
+    <!--section部分-->
+    <!--第一屏-->
+    <div class="section active" style="background-image: url(../res/images/bg1.jpg);
+                                        background-size: cover;
+                                        background-position: 50% 50%;">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png">
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <li style="width: 76px;
+                            height: 107px;
+                            left: 38px;
+                            top: 97px;
+                            z-index: 1;
+                            opacity: 1;
+                            color: #FFF;
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 0px;
+                            transform: none;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: fadeInDown 2s ease 0s 1 both;
+                            -webkit-animation-play-state: initial;
+                            background-color: rgba(0, 0, 0, 0.498039);">
+                    <div class="text-zone element" style="cursor: default; width: 76px; height: 107px;">
+                       <span style="font-size: -webkit-xxx-large; line-height: 53px;">邀</span>
+                       <br>
+                       <div style="text-align: center;"><span style="font-size: large; line-height: 20px;">yao</span></div>
+                    </div>
+                </li>
+                <li style="width: 76px;
+                           height: 107px;
+                           left: 123px;
+                           top: 97px;
+                           z-index: 2;
+                           opacity: 1;
+                           color: rgb(255, 255, 255);
+                           border: 0px solid rgb(0, 0, 0);
+                           padding-bottom: 0px;
+                           padding-top: 0px;
+                           line-height: 1.2;
+                           border-radius: 0px;
+                           transform: none;
+                           box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                           -webkit-animation: fadeInDown 2s ease 1s 1 both;
+                           -webkit-animation-play-state: initial;
+                           background-color: rgba(0, 0, 0, 0.498039);">
+                    <div class="element text-zone" style="cursor: default; width: 76px; height: 107px;">
+                        <span style="font-size: -webkit-xxx-large; line-height: 53px;">请</span>
+                        <br>
+                        <div style="text-align: center;"><span style="font-size: large; line-height: 20px;">qing</span></div>
+                    </div>
+                </li>
+                <li style="width: 76px;
+                            height: 107px;
+                            left: 207px;
+                            top: 97px;
+                            z-index: 3;
+                            opacity: 1;
+                            color: rgb(255, 255, 255);
+                            border: 0px solid rgb(0, 0,. 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 0px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: fadeInDown 2s ease 2s 1 both;
+                            -webkit-animation-play-state: initial;
+                            background-color: rgba(0, 0, 0, 0.498039);">
+                    <div class="element text-zone" style="cursor: default; width: 76px; height: 107px;">
+                        <span style="font-size: -webkit-xxx-large; line-height: 53px;">函</span>
+                        <br>
+                        <div style="text-align: center;"><span style="font-size: large; line-height: 20px;">han</span></div>
+                    </div>
+                </li>
+                <li style="width: 320px;
+                            height: 71px;
+                            left: 0px;
+                            top: 204px;
+                            z-index: 6;
+                            opacity: 1;
+                            color: rgb(255, 255, 255);
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1;
+                            border-radius: 0px;
+                            transform: none;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: fadeIn 3s ease 2s 1 both;
+                            -webkit-animation-play-state: initial;
+                            background-color: rgba(0, 0, 0, 0.498039);">
+                    <div class="text-zone" style="cursor: default;width: 320px;height: 38px">
+                      <div style="text-align: center;"><span style="font-size: large; line-height:1;">han</span></div>
+                    </div>
+                </li>
+                <li style="width: 240px;
+                            height: 91px;
+                            z-index: 4;
+                            transform: rotateZ(0deg);
+                            top: 393px;
+                            left: 78px;
+                            z-index: 4;
+                            opacity: 1;
+                            color: rgb(103, 103, 103);
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1;
+                            border-radius: 0px;
+                            transform: none;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;">
+                    <div>
+                        <img class="element" src="../res/images/flower_starts.gif" style="width: 239px; height: 99px; margin-top: 0px; margin-left: -3.5px;">
+                    </div>
+                </li>
+                <li style="width: 232px;
+                            height: 99px;
+                            left: 0px;
+                            top: 388px;
+                            z-index: 5;
+                            transform: rotateZ(0deg);
+                            opacity: 1;
+                            color: rgb(103, 103, 103);
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1;
+                            border-radius: 0px;
+                            transform: none;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: fadeIn 2s ease 0s 1 both;
+                            -webkit-animation-play-state: initial; ">
+                    <div>
+                        <img class="element" src="../res/images/flower_starts.gif" style="width: 239px; height: 99px; margin-top: 0px; margin-left: -3.5px;">
+                    </div>
+                </li>
+                <li style="width: 180px;
+                            height: 155px;
+                            left: 69px;
+                            top: 287px;
+                            z-index: 8;">
+                    <div>
+                        <img class="element" src="../res/images/user_brand.png" style="width: 180px; height: 155px; margin-top: 0px; margin-left: 0px;">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+    <div class="section"></div>
+</div>
+</body>
+
+<script>
+
 
 </script>
 </html>
