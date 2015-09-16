@@ -62,20 +62,27 @@ function renderPage(a, b, c) {
 		appendTo: "#page" + b,
 		mode: "view"
 	});
-	var d, e, f = 1,
-		g = $(".z-current").width(),
-		h = $(".z-current").height();
-	if (imageWidth = $(".m-img").width(), imageHeight = $(".m-img").height(), g / h >= 320 / 486 ? (f = h / 486, d = (g / f - 320) / 2) : (f = g / 320, e = (h / f - 486) / 2), e && $(".edit_area").css({
-		marginTop: e
-	}), d && $(".edit_area").css({
-		marginLeft: d
-	}), tplCount == c.length && ($("#eqMobileViewport").attr("content", "width=320, initial-scale=" + f + ", maximum-scale=" + f + ", user-scalable=no"), 320 != clientWidth && clientWidth == document.documentElement.clientWidth || isWeixin() && (navigator.userAgent.indexOf("Android") > -1 || navigator.userAgent.indexOf("Linux") > -1))) {
-		var i = 320 / g,
-			j = 486 / h,
+	var leftSpace, topSpace, factor = 1,
+		width = $(".z-current").width(),
+		height = $(".z-current").height();
+	if (imageWidth = $(".m-img").width(),
+			imageHeight = $(".m-img").height(),
+			width / height >= 320 / 486 ? (factor = height / 486, leftSpace = (width / factor - 320) / 2) : (factor = width / 320, topSpace = (height / factor - 486) / 2),
+		topSpace && $(".edit_area").css({	marginTop: topSpace}),
+		leftSpace && $(".edit_area").css({marginLeft: leftSpace	}),
+		tplCount == c.length && $("#eqMobileViewport").attr("content", "width=320, initial-scale=" + factor + ", maximum-scale=" + factor + ", user-scalable=no"),
+		320 != clientWidth && clientWidth == document.documentElement.clientWidth ||
+		isWeixin() && (navigator.userAgent.indexOf("Android") > -1 || navigator.userAgent.indexOf("Linux") > -1))) {
+		var i = 320 / width,
+			j = 486 / height,
 			k = Math.max(i, j);
 		k = k > 1 ? k : 160 * k, k = parseInt(k), $("#eqMobileViewport").attr("content", "width=320, target-densitydpi=" + k)
 	}
-}!
+}
+
+
+
+
 function(a) {
 	function b() {
 		var a = {};
