@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <meta name="baidu-site-verification" content="2MKKT6mbuL"/>
     <title>邀请函</title>
     <meta name="keywords" content="UndI公司邀请函"/>
     <meta id="metaDescription" name="description" content="邀请你来参加XXXX"/>
@@ -27,10 +26,10 @@
 <div id="shareImage" style="display: none;">
     <img src="../res/images/cover.jpg"/>
 </div>
+<div id="musicBtn" class="audioIcon rotating">
+    <audio loop="loops" src="../res/audio/bgmusic.mp3" id="bgmusic" autoplay="autoplay"></audio>
+</div>
 <div class="container" id="container">
-    <div id="musicBtn" class="audioIcon rotating">
-        <audio loop="loops" src="../res/audio/bgmusic.mp3" id="bgmusic" autoplay="autoplay"></audio>
-    </div>
     <div id="loading" class="loading" style="display:none;">
         <div class="loadbox">
             <div class="loadlogo"></div>
@@ -58,7 +57,6 @@
                             padding-top: 0px;
                             line-height: 1.2;
                             border-radius: 0px;
-                            transform: none;
                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
                             -webkit-animation: fadeInDown 2s ease 0s 1 both;
                             -webkit-animation-play-state: initial;
@@ -83,7 +81,6 @@
                            padding-top: 0px;
                            line-height: 1.2;
                            border-radius: 0px;
-                           transform: none;
                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
                            -webkit-animation: fadeInDown 2s ease 1s 1 both;
                            -webkit-animation-play-state: initial;
@@ -132,14 +129,13 @@
                             padding-top: 0px;
                             line-height: 1;
                             border-radius: 0px;
-                            transform: none;
                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
                             -webkit-animation: fadeIn 3s ease 2s 1 both;
                             animation: fadeIn 3s ease 2s 1 both;
                             -webkit-animation-play-state: initial;
                             background-color: rgba(0, 0, 0, 0.498039);">
                     <div class="text-zone element"
-                         style="cursor: default;width: 320px;height: 38px;animation: bounceInUp 2s ease 2s 1 both;">
+                         style="cursor: default;width: 320px;height: 38px;-webkit-animation: bounceInUp 2s ease 2s 1 both;">
                         <div style="text-align: center;"><span
                                 style="font-size: 30px; line-height:70px;">2015年10月7日</span></div>
                     </div>
@@ -147,7 +143,6 @@
                 <li class="content" style="width: 240px;
                             height: 91px;
                             z-index: 4;
-                            transform: rotateZ(0deg);
                             top: 393px;
                             left: 78px;
                             z-index: 4;
@@ -158,7 +153,6 @@
                             padding-top: 0px;
                             line-height: 1;
                             border-radius: 0px;
-                            transform: none;
                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;">
                     <div>
                         <img class="element" src="../res/images/flower_starts.gif"
@@ -170,7 +164,6 @@
                             left: 0px;
                             top: 388px;
                             z-index: 5;
-                            transform: rotateZ(0deg);
                             opacity: 1;
                             color: rgb(103, 103, 103);
                             border: 0px solid rgb(0, 0, 0);
@@ -178,7 +171,6 @@
                             padding-top: 0px;
                             line-height: 1;
                             border-radius: 0px;
-                            transform: none;
                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
                             -webkit-animation: fadeIn 2s ease 0s 1 both;
                             -webkit-animation-play-state: initial; ">
@@ -202,7 +194,7 @@
 
     </div>
     <!--第二屏-->
-    <div class="section" style="background-image: url(../res/images/bg2.jpg);">
+    <div class="section " style="background-image: url(../res/images/bg2.jpg);">
         <div class="up-arrow">
             <img src="../res/images/up_arrowpng.png">
         </div>
@@ -213,7 +205,9 @@
                             left: 23px;
                             top: 35px;
                             z-index: 1;
-                            animation: fadeIn 2s ease 0s both;">
+                            animation: fadeIn 2s ease 0s both;
+                            -webkit-animation:fadeIn 2s ease 0s both;;
+                           -webkit-animation-play-state: initial;">
                     <div>
                         <img class="element" src="../res/images/content_frame.png"
                              style="width: 270px; height: 395px; margin-top: -24px; margin-left: 0px;">
@@ -224,8 +218,8 @@
                                             left: 146px;
                                             top: -18px;
                                             z-index: 2;
-                                            transform: rotateZ(270deg);
-                                            animation: zoomIn 2s ease 1s 1 both;">
+                                            -webkit-transform: rotateZ(270deg);
+                                            -webkit-animation: zoomIn 2s ease 1s 1 both;">
                     <div>
                         <img class="element" src="../res/images/vertical_line.png"
                              style="width: 35px; height: 265px; margin-top: 0px; margin-left: -2.5px;">
@@ -237,8 +231,7 @@
                                             top: 50px;
                                             z-index: 3;
                                             line-height: 1;
-                                            transform: none;
-                                            animation: fadeInLeft 2s ease 0s 1 both;">
+                                            -webkit-animation: fadeInLeft 2s ease 0s 1 both;">
                     <div class="element text-zone" style="cursor: default; width: 180px; height: 57px;">
                         <span style="color: rgb(0, 0, 0); font-size: 32px;">刘闯</span>
                     </div>
@@ -249,8 +242,7 @@
                                             top: 253px;
                                             z-index: 4;
                                             line-height: 1.1;
-                                            transform: none;
-                                            animation: fadeIn 2s ease 3s 1 both;">
+                                            -webkit-animation: fadeIn 2s ease 3s 1 both;">
                     <div class="text-zone element"
                          style="cursor: default; width: 289px; height: 66px;text-align: center">
                         <span style="color: rgb(0, 0, 0);"><span style="font-size: 18px; background-color: initial;">于10月07日晚18：30在西贝阳光海岸333雅间小聚！</span></span>
@@ -262,8 +254,7 @@
                                             top: 132px;
                                             z-index: 5;
                                             line-height: 1;
-                                            transform: none;
-                                            animation: zoomIn 2s ease 0s 1 both;">
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;">
                     <div class="element text-zone" style="    cursor: default;width: 75px;height: 115px;">
                         <span style="font-size: 48px; color: rgb(182, 27, 82);">诚邀</span>
                     </div>
@@ -274,8 +265,7 @@
                                         top: 165px;
                                         z-index: 6;
                                         line-height: 1;
-                                        transform: none;
-                                        animation: fadeInLeft 2s ease 2s 1 both; ">
+                                        -webkit-animation: fadeInLeft 2s ease 2s 1 both; ">
                     <div class="element text-zone" style="cursor: default;width: 105px;height: 48px;">
                         <span style="color: rgb(0, 0, 0); font-size: 24px;">贾瑞峰</span>
                     </div>
@@ -296,8 +286,7 @@
                             left: 44px;
                             top: 271px;
                             z-index: 1;
-                            transform: none;
-                            animation: flipInY 2s ease 1s 1 both;">
+                            -webkit-animation: flipInY 2s ease 1s 1 both;">
                     <div>
                         <img class="element" src="../res/images/user_pic_2.JPG"
                              style="width: 237px; height: 187px; margin-top: -14px; margin-left: 0px;">
@@ -309,8 +298,7 @@
                                             left: 45px;
                                             top: 88px;
                                             z-index: 2;
-                                            transform: none;
-                                            animation: flipInY 2s ease 0.5s 1 both;">
+                                            -webkit-animation: flipInY 2s ease 0.5s 1 both;">
                     <div>
                         <img class="element" src="../res/images/user_pic_1.jpg"
                              style="width: 236px; height: 162px; margin-top: -4px; margin-left: 0px;">
@@ -322,7 +310,7 @@
                                             left: 19px;
                                             top: 28px;
                                             z-index: 3;
-                                            transform: rotateZ(45deg);
+                                            -webkit-transform: rotateZ(45deg);
                                             opacity: 1;
                                             color: rgb(255, 255, 255);
                                             border: 0px solid rgb(0, 0, 0);
@@ -331,9 +319,9 @@
                                             line-height: 1;
                                             border-radius: 16px;
                                             box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
-                                            animation: zoomIn 2s ease 0s 1 both;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
                                             background-color: rgb(242, 97, 97);">
-                    <div class="element text-zone" style="cursor: default; width: 96px; height: 96px;transform: rotateZ(-45deg);padding-left: 20px;">
+                    <div class="element text-zone" style="cursor: default; width: 96px; height: 96px;-webkit-transform: rotateZ(-45deg);padding-left: 20px;">
                         <div class="text-place-holder"></div>
                         <span style="text-align: center">饭店</span>
                     </div>
@@ -344,7 +332,7 @@
                                             left: 210px;
                                             top: 205px;
                                             z-index: 4;
-                                            transform: rotateZ(45deg);
+                                            -webkit-transform: rotateZ(45deg);
                                             opacity: 1;
                                             color: rgb(255, 255, 255);
                                             border: 0px solid rgb(0, 0, 0);
@@ -353,9 +341,9 @@
                                             line-height: 1;
                                             border-radius: 16px;
                                             box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
-                                            animation: zoomIn 2s ease 0s 1 both;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
                                             background-color: rgb(255, 222, 107);">
-                    <div class="element text-zone" style="cursor: default; width: 88px; height: 88px;transform: rotateZ(-45deg);padding-left: 20px;">
+                    <div class="element text-zone" style="cursor: default; width: 88px; height: 88px;-webkit-transform: rotateZ(-45deg);padding-left: 20px;">
                         <div class="text-place-holder"></div>
                         <span style="text-align: center">雅间</span>
                     </div>
@@ -367,7 +355,7 @@
                                             <!--z-index: 5;-->
                                             <!--line-height: 1;-->
                                             <!--transform: none;-->
-                                            <!--animation: zoomIn 2s ease 0s 1 both;">-->
+                                            <!---webkit-animation: zoomIn 2s ease 0s 1 both;">-->
                     <!--<div class="element text-zone" style="    cursor: default;width: 75px;height: 115px;">-->
                         <!--<span style="font-size: 48px; color: rgb(182, 27, 82);">诚邀</span>-->
                     <!--</div>-->
@@ -379,7 +367,7 @@
                                         <!--z-index: 6;-->
                                         <!--line-height: 1;-->
                                         <!--transform: none;-->
-                                        <!--animation: fadeInLeft 2s ease 2s 1 both; ">-->
+                                        <!---webkit-animation: fadeInLeft 2s ease 2s 1 both; ">-->
                     <!--<div class="element text-zone" style="cursor: default;width: 105px;height: 48px;">-->
                         <!--<span style="color: rgb(0, 0, 0); font-size: 24px;">贾瑞峰</span>-->
                     <!--</div>-->
@@ -401,7 +389,7 @@
                             top: 31px;
                             z-index: 1;
                             line-height: 1;
-                            animation: fadeIn 2s ease 1s 1 both;">
+                            -webkit-animation: fadeIn 2s ease 1s 1 both;">
                     <div class="text-zone element"  style="cursor: default; width: 192px; height: 62px;">
                         <span style="font-size: 16px; color: rgb(255, 255, 255);">
                             <span style="font-size: 16px;">饭店地址：呼武公路3公里处</span>
@@ -422,7 +410,7 @@
                                             border-radius: 0px;
                                             transform: none;
                                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
-                                            animation: fadeIn 2s ease 1s 1 both;">
+                                            -webkit-animation: fadeIn 2s ease 1s 1 both;">
                     <div class="text-zone element"  style="cursor: default; width: 194px; height: 109px;">
                         <span style="font-size: 16px; color: rgb(255, 255, 255);">
                             <span style="font-size: 16px;">优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。</span>
@@ -435,7 +423,7 @@
                                             left: 20px;
                                             top: 19px;
                                             z-index: 3;
-                                            transform: rotateZ(45deg);
+                                            -webkit-transform: rotateZ(45deg);
                                             opacity: 1;
                                             color: rgb(255, 255, 255);
                                             border: 0px solid rgb(0, 0, 0);
@@ -444,9 +432,9 @@
                                             line-height: 1;
                                             border-radius: 16px;
                                             box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
-                                            animation: zoomIn 2s ease 0s 1 both;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
                                             background-color: rgb(176, 237, 166);">
-                    <div class="element text-zone" style="cursor: default; width: 85px; height: 85px;transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
+                    <div class="element text-zone" style="cursor: default; width: 85px; height: 85px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
                         <span style="text-align: center;color: #000;font-size:18px">饭店地址</span>
                     </div>
                 </li>
@@ -456,7 +444,7 @@
                                             left: 208px;
                                             top: 294px;
                                             z-index: 4;
-                                            transform: rotateZ(45deg);
+                                            -webkit-transform: rotateZ(45deg);
                                             opacity: 1;
                                             color: rgb(255, 255, 255);
                                             border: 0px solid rgb(0, 0, 0);
@@ -465,9 +453,9 @@
                                             line-height: 1;
                                             border-radius: 16px;
                                             box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
-                                            animation: zoomIn 2s ease 0s 1 both;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
                                             background-color: rgb(149, 177, 232);">
-                    <div class="element text-zone" style="cursor: default; width: 86px; height: 84px;transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
+                    <div class="element text-zone" style="cursor: default; width: 86px; height: 84px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
                         <span style="text-align: center;color: #000;font-size:18px">优惠活动</span>
                     </div>
                 </li>
@@ -485,7 +473,7 @@
                                             line-height: 1;
                                             border-radius: 15px;
                                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
-                                            animation: bounceIn 2s ease 1.5s 1 both;">
+                                            -webkit-animation: bounceIn 2s ease 1.5s 1 both;">
                     <div>
                         <img class="element" src="../res/images/user_location.jpg"
                              style="width: 234px; height: 149px; margin-top: 0px; margin-left: -0.5px;">
@@ -498,7 +486,7 @@
                                         top: 400px;
                                         z-index: 6;
                                         line-height: 1;
-                                        animation: fadeIn 2s ease 1s 1 both; ">
+                                        -webkit-animation: fadeIn 2s ease 1s 1 both; ">
 
                     <div class="element text-zone" style="cursor: default; width: 320px; height: 70px;">
                         <span style="font-size: 20px; color: rgb(255, 255, 255);">感谢您使用百灵鸟2555555订餐</span>
@@ -531,7 +519,7 @@
                         border-radius: 0px;
                         box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
                         width: 100%;
-                        animation: fadeIn 1s ease 1.2s 1 both;">
+                        -webkit-animation: fadeIn 1s ease 1.2s 1 both;">
                     <div class="text-zone element"  style="cursor: default; height: 38px;">
                         <div style="text-align: center;">
                             <span style="color: rgb(86, 54, 121); font-weight: bold; line-height: 12.727272033691406px; font-size: 16px;">长按二维码关注九联</span>
@@ -552,9 +540,8 @@
                                             padding-bottom: 0px;
                                             padding-top: 0px;
                                             border-radius: 0px;
-                                            transform: none;
                                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
-                                            animation: fadeInUp 1s ease 0.8s 1 both;">
+                                            -webkit-animation: fadeInUp 1s ease 0.8s 1 both;">
                     <div class="text-zone element"  style="cursor: default; width: 309px; height: 115px;">
                         <div id="1986601358" ctype="2" class="element comp_paragraph editable-text" style="cursor: default; width: 309px; height: 115px;">
                             <div style="text-align: center;">
@@ -571,7 +558,7 @@
                                             left: 22px;
                                             top: 198px;
                                             z-index: 3;
-                                            animation: zoomIn 1s ease 1s 1 both;">
+                                            -webkit-animation: zoomIn 1s ease 1s 1 both;">
                     <img class="element" src="../res/images/horizen_line.png"
                          style="width: 273px; height: 68px; margin-top: -22px; margin-left: 0px;"/>
                 </li>
@@ -688,7 +675,8 @@
         }
 
 
-    });
+    })
+
 
 </script>
 </body>

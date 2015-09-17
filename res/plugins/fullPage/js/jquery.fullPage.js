@@ -396,11 +396,14 @@
 
                 //adjusting the height of the table-cell for IE and Firefox
                 if(options.verticalCentered){
-                    $(this).find(TABLE_CELL_SEL).css('height', getTableHeight($(this)) + 'px');
+                    //zwr修改
+                    //$(this).find(TABLE_CELL_SEL).css('height', getTableHeight($(this)) + 'px');
+                    $(this).find(TABLE_CELL_SEL).css('height', '100%');
                 }
 
-                $(this).css('height', windowsHeight + 'px');
-
+                //zwr修改
+                //$(this).css('height', windowsHeight + 'px');
+                $(this).css('height','100%');
                 //resizing the scrolling divs
                 if(options.scrollOverflow){
                     if(slides.length){
@@ -654,7 +657,9 @@
                 section.addClass(ACTIVE);
             }
 
-            section.css('height', windowsHeight + 'px');
+            //zwr修改
+            //section.css('height', windowsHeight + 'px');
+            section.css('height', '100%');
 
             if(options.paddingTop){
                 section.css('padding-top', options.paddingTop);
@@ -1986,7 +1991,9 @@
         }
 
         function addTableClass(element){
-            element.addClass(TABLE).wrapInner('<div class="' + TABLE_CELL + '" style="height:' + getTableHeight(element) + 'px;" />');
+            //zwr修改
+            //element.addClass(TABLE).wrapInner('<div class="' + TABLE_CELL + '" style="height:' + getTableHeight(element) + 'px;" />');
+            element.addClass(TABLE).wrapInner('<div class="' + TABLE_CELL + '" style="height:100%" />');
         }
 
         function getTableHeight(element){
