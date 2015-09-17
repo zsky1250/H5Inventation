@@ -5,19 +5,14 @@
     <title>邀请函</title>
     <meta name="keywords" content="UndI公司邀请函"/>
     <meta id="metaDescription" name="description" content="邀请你来参加XXXX"/>
-    <!--<META HTTP-EQUIV="pragma" CONTENT="no-cache">-->
-    <!--<META HTTP-EQUIV="Cache-Control" CONTENT="no-store, must-revalidate">-->
-    <!--<META HTTP-EQUIV="expires" CONTENT="Wed, 26 Feb 1997 08:21:57 GMT">-->
-    <!--<META HTTP-EQUIV="expires" CONTENT="0">-->
     <meta id="viewPort" name="viewport"
-          content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true">
+          content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>
 
     <link rel="shortcut icon" href="../res/favicon.ico" type="image/x-icon"/>
-    <link rel="stylesheet" href="../res/css/zUIWX.css"/>
 
-    <link rel="stylesheet" href="../res/plugins/fullPage/css/jquery.fullPage.css"/>
-    <script src="../res/js/jquery-1.11.1.js"></script>
-    <script src="../res/plugins/fullPage/js/jquery.fullPage.js"></script>
+    <link rel="stylesheet" href="../res/css/zUIWX.min.css"/>
+    <script src="../res/js/jquery-1.11.3.min.js"></script>
+    <script src="../res/js/zUIWX.min.js"></script>
 </head>
 
 <body>
@@ -26,22 +21,24 @@
 <div id="shareImage" style="display: none;">
     <img src="../res/images/cover.jpg"/>
 </div>
+<!--播放音乐按钮-->
 <div id="musicBtn" class="audioIcon rotating">
     <audio loop="loops" src="../res/audio/bgmusic.mp3" id="bgmusic" autoplay="autoplay"></audio>
 </div>
-<div class="container" id="container">
-    <div id="loading" class="loading" style="display:none;">
-        <div class="loadbox">
-            <div class="loadlogo"></div>
-            <div class="loadbg"></div>
-        </div>
+<!--延时载入用的loading条-->
+<div id="loading" class="loading" style="display:none;">
+    <div class="loadbox">
+        <div class="loadlogo"></div>
+        <div class="loadbg"></div>
     </div>
-
+</div>
+<!--幻灯具体内容-->
+<div class="container" id="container">
     <!--section部分-->
     <!--第一屏-->
     <div class="section active" style="background-image: url(../res/images/bg1.jpg);">
         <div class="up-arrow">
-            <img src="../res/images/up_arrowpng.png">
+            <img src="../res/images/up_arrowpng.png"/>
         </div>
         <div class="content-wrapper">
             <ul class="content">
@@ -136,8 +133,8 @@
                             background-color: rgba(0, 0, 0, 0.498039);">
                     <div class="text-zone element"
                          style="cursor: default;width: 320px;height: 38px;-webkit-animation: bounceInUp 2s ease 2s 1 both;">
-                        <div style="text-align: center;"><span
-                                style="font-size: 30px; line-height:70px;">2015年10月7日</span></div>
+                        <div style="text-align: center;">
+                            <span id="inventDate" style="font-size: 30px; line-height:70px;"></span></div>
                     </div>
                 </li>
                 <li class="content" style="width: 240px;
@@ -185,7 +182,7 @@
                             top: 287px;
                             z-index: 8;">
                     <div>
-                        <img class="element" src="../res/images/user_brand.png"
+                        <img class="element" src="../res/images/logo.png"
                              style="width: 180px; height: 155px; margin-top: 0px; margin-left: 0px;">
                     </div>
                 </li>
@@ -200,6 +197,7 @@
         </div>
         <div class="content-wrapper">
             <ul class="content">
+                <!--左右框-->
                 <li style="width: 270px;
                             height: 347px;
                             left: 23px;
@@ -213,6 +211,7 @@
                              style="width: 270px; height: 395px; margin-top: -24px; margin-left: 0px;">
                     </div>
                 </li>
+                <!--上-横线-->
                 <li class="content" style="width: 30px;
                                             height: 265px;
                                             left: 146px;
@@ -225,6 +224,7 @@
                              style="width: 35px; height: 265px; margin-top: 0px; margin-left: -2.5px;">
                     </div>
                 </li>
+                <!--邀请人姓名-->
                 <li class="content" style="width: 124px;
                                             height: 57px;
                                             left: 51px;
@@ -233,9 +233,10 @@
                                             line-height: 1;
                                             -webkit-animation: fadeInLeft 2s ease 0s 1 both;">
                     <div class="element text-zone" style="cursor: default; width: 180px; height: 57px;">
-                        <span style="color: rgb(0, 0, 0); font-size: 32px;">刘闯</span>
+                        <span id="inventHoster" style="color: rgb(0, 0, 0); font-size: 32px;"></span>
                     </div>
                 </li>
+                <!--下方内容文字-->
                 <li class="content" style="width: 289px;
                                             height: 66px;
                                             left: 18px;
@@ -244,8 +245,8 @@
                                             line-height: 1.1;
                                             -webkit-animation: fadeIn 2s ease 3s 1 both;">
                     <div class="text-zone element"
-                         style="cursor: default; width: 289px; height: 66px;text-align: center">
-                        <span style="color: rgb(0, 0, 0);"><span style="font-size: 18px; background-color: initial;">于10月07日晚18：30在西贝阳光海岸333雅间小聚！</span></span>
+                         style="cursor: default; width: 289px; height: 80px;text-align: center">
+                        <span id="inventContent" style="color: rgb(0, 0, 0);font-size: 18px; background-color: initial;"></span>
                     </div>
                 </li>
                 <li class="content" style="width: 75px;
@@ -259,6 +260,7 @@
                         <span style="font-size: 48px; color: rgb(182, 27, 82);">诚邀</span>
                     </div>
                 </li>
+                <!--中间-邀请人-->
                 <li class="content" style="width: 105px;
                                         height: 48px;
                                         left: 131px;
@@ -267,7 +269,7 @@
                                         line-height: 1;
                                         -webkit-animation: fadeInLeft 2s ease 2s 1 both; ">
                     <div class="element text-zone" style="cursor: default;width: 105px;height: 48px;">
-                        <span style="color: rgb(0, 0, 0); font-size: 24px;">贾瑞峰</span>
+                        <span id="inventCustomer" style="color: rgb(0, 0, 0); font-size: 24px;"></span>
                     </div>
                 </li>
            </ul>
@@ -288,7 +290,7 @@
                             z-index: 1;
                             -webkit-animation: flipInY 2s ease 1s 1 both;">
                     <div>
-                        <img class="element" src="../res/images/user_pic_2.JPG"
+                        <img id="userPic2" class="element" src=""
                              style="width: 237px; height: 187px; margin-top: -14px; margin-left: 0px;">
                     </div>
                 </li>
@@ -300,7 +302,7 @@
                                             z-index: 2;
                                             -webkit-animation: flipInY 2s ease 0.5s 1 both;">
                     <div>
-                        <img class="element" src="../res/images/user_pic_1.jpg"
+                        <img id="userPic1" class="element" src=""
                              style="width: 236px; height: 162px; margin-top: -4px; margin-left: 0px;">
                     </div>
                 </li>
@@ -323,7 +325,7 @@
                                             background-color: rgb(242, 97, 97);">
                     <div class="element text-zone" style="cursor: default; width: 96px; height: 96px;-webkit-transform: rotateZ(-45deg);padding-left: 20px;">
                         <div class="text-place-holder"></div>
-                        <span style="text-align: center">饭店</span>
+                        <span id="userPic1Text" style="text-align: center"></span>
                     </div>
                 </li>
                 <!--中右-黄色菱形-->
@@ -345,7 +347,7 @@
                                             background-color: rgb(255, 222, 107);">
                     <div class="element text-zone" style="cursor: default; width: 88px; height: 88px;-webkit-transform: rotateZ(-45deg);padding-left: 20px;">
                         <div class="text-place-holder"></div>
-                        <span style="text-align: center">雅间</span>
+                        <span id="userPic2Text" style="text-align: center"></span>
                     </div>
                 </li>
                 <!--<li class="content" style="width: 75px;-->
@@ -392,7 +394,7 @@
                             -webkit-animation: fadeIn 2s ease 1s 1 both;">
                     <div class="text-zone element"  style="cursor: default; width: 192px; height: 62px;">
                         <span style="font-size: 16px; color: rgb(255, 255, 255);">
-                            <span style="font-size: 16px;">饭店地址：呼武公路3公里处</span>
+                            <span id="inventLocation" style="font-size: 16px;"></span>
                         </span>
                     </div>
                 </li>
@@ -413,7 +415,7 @@
                                             -webkit-animation: fadeIn 2s ease 1s 1 both;">
                     <div class="text-zone element"  style="cursor: default; width: 194px; height: 109px;">
                         <span style="font-size: 16px; color: rgb(255, 255, 255);">
-                            <span style="font-size: 16px;">优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。</span>
+                            <span id="inventSales" style="font-size: 16px;"></span>
                         </span>
                     </div>
                 </li>
@@ -435,7 +437,7 @@
                                             -webkit-animation: zoomIn 2s ease 0s 1 both;
                                             background-color: rgb(176, 237, 166);">
                     <div class="element text-zone" style="cursor: default; width: 85px; height: 85px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
-                        <span style="text-align: center;color: #000;font-size:18px">饭店地址</span>
+                        <span id="inventLocationText" style="text-align: center;color: #000;font-size:18px"></span>
                     </div>
                 </li>
                 <!--右下-紫色菱形-->
@@ -456,7 +458,7 @@
                                             -webkit-animation: zoomIn 2s ease 0s 1 both;
                                             background-color: rgb(149, 177, 232);">
                     <div class="element text-zone" style="cursor: default; width: 86px; height: 84px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
-                        <span style="text-align: center;color: #000;font-size:18px">优惠活动</span>
+                        <span id="inventSalesText" style="text-align: center;color: #000;font-size:18px"></span>
                     </div>
                 </li>
                 <!--中间用户地图-->
@@ -475,7 +477,7 @@
                                             box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
                                             -webkit-animation: bounceIn 2s ease 1.5s 1 both;">
                     <div>
-                        <img class="element" src="../res/images/user_location.jpg"
+                        <img id="inventLocationPic" class="element" src=""
                              style="width: 234px; height: 149px; margin-top: 0px; margin-left: -0.5px;">
                      </div>
                 </li>
@@ -489,9 +491,9 @@
                                         -webkit-animation: fadeIn 2s ease 1s 1 both; ">
 
                     <div class="element text-zone" style="cursor: default; width: 320px; height: 70px;">
-                        <span style="font-size: 20px; color: rgb(255, 255, 255);">感谢您使用百灵鸟2555555订餐</span>
+                        <span id="invertOrderText1" style="font-size: 20px; color: rgb(255, 255, 255);"></span>
 
-                        <div style="text-align: center;"><span style="font-size: 20px; color: rgb(255, 255, 255);">预祝您用餐愉快</span>
+                        <div style="text-align: center;"><span id="inventOrderText2" style="font-size: 20px; color: rgb(255, 255, 255);"></span>
                         </div>
                     </div>
                 </li>
@@ -612,70 +614,32 @@
 </div>
 
 <script>
+
+
     $(function () {
-        $('#container').fullpage({
-            css3:true,
-            onLeave:function(pre,post,direction){
-                $(".section").eq(post-1).addClass("moving");
-//                alert("sdf");
-
-            },
-            afterLoad:function(link,index){
-                $(".moving").removeClass("moving");
-//                alert("afterload");
-            }
-        });
-        var musicState = 'on';
-        $('#musicBtn').click(function(){
-            if(musicState=='on'){
-                $(this).children("audio").get(0).pause();
-                musicState = 'off';
-                $(this).removeClass("rotating");
-            }else{
-                $(this).children("audio").get(0).play();
-                musicState = 'on';
-                $(this).addClass("rotating");
-            }
-        });
-        renderPage();
-
-
-        function renderPage(){
-            var leftSpace, topSpace,scaleFactor = 1;
-            var width = $(".active").width();
-            var height = $(".active").height();
-            if(width / height >= 320 / 486){
-                scaleFactor = height / 486;
-                leftSpace = (width / scaleFactor - 320) / 2;
-            }else{
-                scaleFactor = width / 320;
-                topSpace =  (height / scaleFactor - 486) / 2;
-            }
-            if(leftSpace){
-                $(".content").css({marginLeft:leftSpace});
-            }
-            if(topSpace){
-                $(".content").css({marginTop:topSpace})
-            }
-            $("#viewPort").attr("content", "width=320, initial-scale=" + scaleFactor + ", maximum-scale=" + scaleFactor + ", user-scalable=no");
-            if(isWeixin() && (navigator.userAgent.indexOf("Android") > -1 || navigator.userAgent.indexOf("Linux") > -1)){
-                var factor = Math.max(320 / width, 486 / height);
-                if(factor<1){
-                    factor = factor*160;
-                }
-                factor = parseInt(factor);
-                $("#viewPort").attr("content", "width=320, target-densitydpi=" + factor)
-            }
-
-        }
-
-        function isWeixin() {
-            var userAgent = navigator.userAgent.toLowerCase();
-            return "micromessenger" == userAgent.match(/MicroMessenger/i) ? !0 : !1
-        }
-
-
-    })
+        var content = {
+            inventDate:'2015年10月1日',
+            inventHoster:'刘闯',
+            inventCustomer:'贾瑞丰',
+            inventContent:'于10月07日晚18：30在西贝阳光海岸333雅间小聚！',
+            inventLocation:'饭店地址：呼武公路3公里处',
+            inventLocationText:'饭店地址',
+            inventSales:'优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。',
+            inventSalesText:'优惠活动',
+            inventLocationPic:'../res/images/user_location.jpg',
+            inventOrderText1:'感谢您使用百灵鸟2555555订餐',
+            invertOrderText2:'预祝您用餐愉快',
+            userPic1:'../res/images/user_pic_1.jpg',
+            userPic2:'../res/images/user_pic_2.jpg',
+            userPic1Text:'饭店',
+            userPic2Text:'雅间'
+            };
+        var content2 = {
+            postUrl:'xxx/xxx.do',
+            postData:{templateID:1}
+        };
+        $.zUIWX(content);
+    });
 
 
 </script>
