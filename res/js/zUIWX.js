@@ -2289,9 +2289,11 @@
             if(isTouchDevice || isTouch){
                 //Microsoft pointers
                 var MSPointer = getMSPointer();
-
-                $(WRAPPER_SEL).off('touchstart ' +  MSPointer.down).on('touchstart ' + MSPointer.down, touchStartHandler);
-                $(WRAPPER_SEL).off('touchmove ' + MSPointer.move).on('touchmove ' + MSPointer.move, touchMoveHandler);
+                //zwr modified
+                //$(WRAPPER_SEL).off('touchstart ' +  MSPointer.down).on('touchstart ' + MSPointer.down, touchStartHandler);
+                //$(WRAPPER_SEL).off('touchmove ' + MSPointer.move).on('touchmove ' + MSPointer.move, touchMoveHandler);
+                $(".up-arrow").off('touchstart ' +  MSPointer.down).on('touchstart ' + MSPointer.down, touchStartHandler);
+                $(".up-arrow").off('touchmove ' + MSPointer.move).on('touchmove ' + MSPointer.move, touchMoveHandler);
             }
         }
 
@@ -2564,7 +2566,7 @@
     };
 });
 
-(function ($) {
+;(function ($) {
 
     $.extend({
         zUIWX: function (option) {
