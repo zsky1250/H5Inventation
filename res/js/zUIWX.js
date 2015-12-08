@@ -2586,21 +2586,23 @@
             viewPort : 'viewPort',
             postUrl:'',
             postData:'',
-            inventDate:'2015年10月1日',
-            inventHoster:'刘闯',
-            inventCustomer:'贾瑞丰',
-            inventContent:'于10月07日晚18：30在西贝阳光海岸333雅间小聚！',
-            inventLocation:'饭店地址：呼武公路3公里处',
-            inventLocationText:'饭店地址',
-            inventSales:'优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。',
-            inventSalesText:'优惠活动',
-            inventLocationPic:'../res/images/user_location.jpg',
-            inventOrderText1:'感谢您使用百灵鸟2555555订餐',
-            invertOrderText2:'预祝您用餐愉快',
-            userPic1:'../res/images/user_pic_1.jpg',
-            userPic2:'../res/images/user_pic_2.jpg',
-            userPic1Text:'自定义名称1',
-            userPic2Text:'自定义名称2'
+            content:{
+                inventDate:'2015年10月1日',
+                inventHoster:'刘闯',
+                inventCustomer:'贾瑞丰',
+                inventContent:'于10月07日晚18：30在西贝阳光海岸333雅间小聚！',
+                inventLocation:'饭店地址：呼武公路3公里处',
+                inventLocationText:'饭店地址',
+                inventSales:'优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。',
+                inventSalesText:'优惠活动',
+                inventLocationPic:'../res/images/user_location.jpg',
+                inventOrderText1:'感谢您使用百灵鸟2555555订餐',
+                invertOrderText2:'预祝您用餐愉快',
+                userPic1:'../res/images/user_pic_1.jpg',
+                userPic2:'../res/images/user_pic_2.jpg',
+                userPic1Text:'自定义名称1',
+                userPic2Text:'自定义名称2'
+            }
         };
         this.opts = $.extend({}, DEFAULTS, options);
         this._init();
@@ -2671,22 +2673,33 @@
                 $("#viewPort").attr("content", "width=320, target-densitydpi=" + factor)
             }
         },
-        _fillContent : function(){
-            $('#inventDate').html(this.opts.inventDate);
-            $('#inventHoster').html(this.opts.inventHoster);
-            $('#inventCustomer').html(this.opts.inventCustomer);
-            $('#inventContent').html(this.opts.inventContent);
-            $('#inventLocation').html(this.opts.inventLocation);
-            $('#inventLocationText').html(this.opts.inventLocationText);
-            $('#inventSales').html(this.opts.inventSales);
-            $('#inventSalesText').html(this.opts.inventSalesText);
-            $('#inventLocationPic').attr('src',this.opts.inventLocationPic);
-            $('#inventOrderText1').html(this.opts.inventOrderText1);
-            $('#invertOrderText2').html(this.opts.invertOrderText2);
-            $('#userPic1').attr('src',this.opts.userPic1);
-            $('#userPic2').attr('src',this.opts.userPic2);
-            $('#userPic1Text').html(this.opts.userPic1Text);
-            $('#userPic2Text').html(this.opts.userPic2Text);
+        _fillContent : function(data){
+            $.extend(this.opts.content, data);
+            $.each(this.opts.content,function(key,value){
+                var $dom = $("#"+key);
+                if($dom){
+                    if($dom.is('img')){
+                        $dom.attr('src',value);
+                    }else{
+                        $dom.html(value);
+                    }
+                }
+            });
+            //$('#inventDate').html(this.opts.inventDate);
+            //$('#inventHoster').html(this.opts.inventHoster);
+            //$('#inventCustomer').html(this.opts.inventCustomer);
+            //$('#inventContent').html(this.opts.inventContent);
+            //$('#inventLocation').html(this.opts.inventLocation);
+            //$('#inventLocationText').html(this.opts.inventLocationText);
+            //$('#inventSales').html(this.opts.inventSales);
+            //$('#inventSalesText').html(this.opts.inventSalesText);
+            //$('#inventLocationPic').attr('src',this.opts.inventLocationPic);
+            //$('#inventOrderText1').html(this.opts.inventOrderText1);
+            //$('#invertOrderText2').html(this.opts.invertOrderText2);
+            //$('#userPic1').attr('src',this.opts.userPic1);
+            //$('#userPic2').attr('src',this.opts.userPic2);
+            //$('#userPic1Text').html(this.opts.userPic1Text);
+            //$('#userPic2Text').html(this.opts.userPic2Text);
         },
         _loadDataIfNeed : function(){
            return $.ajax(this.opts.postUrl, {

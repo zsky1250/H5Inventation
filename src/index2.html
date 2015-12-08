@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <title>邀请函2</title>
+    <meta name="keywords" content="UndI公司邀请函"/>
+    <meta id="metaDescription" name="description" content="邀请你来参加XXXX"/>
+    <meta id="viewPort" name="viewport"
+          content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>
+
+    <link rel="shortcut icon" href="../res/favicon.ico" type="image/x-icon"/>
+
+    <link rel="stylesheet" href="../res/css/zUIWX.css"/>
+    <script src="../res/js/jquery-1.11.3.min.js"></script>
+    <script src="../res/js/zUIWX.js"></script>
+</head>
+
+<body>
+<!--微信默认会把网页第一张图片当做分享时的链接封面，-->
+<!--但是这个方法在一些Android机器上不靠谱，最好是调用微信的JSSDK的share接口，在分享前，将用到的缩率信息传进去，但那需要公证号，有访问频率限制-->
+<div id="shareImage" style="display: none;">
+    <img src="../res/images/cover.jpg"/>
+</div>
+<!--播放音乐按钮-->
+<div id="musicBtn" class="audioIcon rotating">
+    <audio loop="loops" src="../res/audio/bgmusic.mp3" id="bgmusic" autoplay="autoplay"></audio>
+</div>
+<!--延时载入用的loading条-->
+<div id="loading" class="loading" style="display:none;">
+    <div class="loadbox">
+        <div class="loadlogo"></div>
+        <div class="loadbg"></div>
+    </div>
+</div>
+<!--幻灯具体内容-->
+<div class="container" id="container">
+    <!--section部分-->
+    <!--第一屏-->
+    <div class="section active" style="background-image: url(../res/images/bg1.jpg);">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png"/>
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <!--邀请白色方框-->
+                <li style="width: 160px;
+                            height: 42px;
+                            left: 0px;
+                            top: 20px;
+                            z-index: 1;
+                            opacity: 1;
+                            color: #FFF;
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 13px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: fadeInLeft 2s ease 0.3s 1 both;
+                            -webkit-animation-play-state: initial;
+                            background-color: rgba(255, 255, 255, 0.729412);">
+                    <div class="text-zone element" style="cursor: default; width: 100px; height: 42px;">
+                        <span id="inventName" style="font-size: 20px;color:black;line-height: 20px"></span>
+                        <br>
+                    </div>
+                </li>
+                <!--邀请文字-->
+                <li style="width: 80px;
+                            height: 42px;
+                            left: 74px;
+                            top: 20px;
+                            z-index: 10;
+                            opacity: 1;
+                            color: #FFF;
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 13px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation:fadeInRight 2s ease 1s 1 both;
+                            -webkit-animation-play-state: initial;">
+                    <div class="text-zone element" style="cursor: default; width: 100px; height: 42px;">
+                        <span style="font-size: 20px;color:black;line-height: 20px;font-family: '楷体'">邀请</span>
+                        <br>
+                    </div>
+                </li>
+                <!--"亲"-->
+                <li class="content" style="width: 77px;
+                           height: 63px;
+                           left: 98px;
+                           top: 89px;
+                           z-index: 2;
+                           opacity: 1;
+                           color: rgb(255, 255, 255);
+                           border: 0px solid rgb(0, 0, 0);
+                           padding-bottom: 0px;
+                           padding-top: 0px;
+                           line-height: 1.2;
+                           border-radius: 0px;
+                           box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                           -webkit-animation: fadeInLeft 2s ease 2.5s 1 both;
+                           -webkit-animation-play-state: initial;">
+                    <div>
+                        <img class="element" src="../res/images/qin.png"
+                             style="width: 100%">
+                    </div>
+                </li>
+                <!--笑脸-->、
+                <li class="content" style="width: 39px;
+                           height: 39px;
+                           left: 170px;
+                           top: 102px;
+                           z-index: 2;
+                           opacity: 1;
+                           color: rgb(255, 255, 255);
+                           border: 0px solid rgb(0, 0, 0);
+                           padding-bottom: 0px;
+                           padding-top: 0px;
+                           line-height: 1.2;
+                           border-radius: 0px;
+                           box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                           -webkit-animation: fadeInRight 2s ease 2.5s 1 both;
+                           -webkit-animation-play-state: initial;">
+                    <div>
+                        <img class="element" src="../res/images/smile.png"
+                             style="width: 100%">
+                    </div>
+                </li>
+                <!--有空么-->
+                <li class="content" style="width: 290px;
+                            height: 80px;
+                            left: 25px;
+                            top: 160px;
+                            z-index: 3;
+                            opacity: 1;
+                            color: rgb(255, 255, 255);
+                            border: 0px solid rgb(0, 0,0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 0px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: bounceInUp 2s ease 3.5s 1 both;
+                            -webkit-animation-play-state: initial;
+                            background-color:rgba(143, 89, 89, 0);">
+                    <div class="element text-zone" style=" color:rgb(120, 88, 5);text-align: center;font-size: 18px;font-weight: bold">
+                        <span id="inventDate"></span>
+                        <span>有空么？</span>
+                    </div>
+                </li>
+                <!--我订了xxx雅间-->
+                <li class="content" style="width: 320px;
+                            height: 80px;
+                            left: 1px;
+                            top: 200px;
+                            z-index: 3;
+                            opacity: 1;
+                            color: rgb(255, 255, 255);
+                            border: 0px solid rgb(0, 0,0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 0px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: bounceInUp 2s ease 4.5s 1 both;
+                            -webkit-animation-play-state: initial;
+                            background-color:rgba(143, 89, 89, 0);">
+                    <div class="element text-zone" style=" color:rgb(34,88,1);text-align: center;font-size: 18px;font-weight: bold">
+                        <span id="inventContent"></span>
+                    </div>
+                </li>
+                <!--餐厅图-->
+                <li class="content" style="width: 223px;
+                            height: 166px;
+                            left: 49px;
+                            top: 250px;
+                            z-index: 100;
+                            border: 2px solid rgb(255, 255, 255);
+                            border-radius: 28px;
+                            -webkit-animation: zoomIn 2s ease 5.5s 1 both;
+                            -webkit-animation-play-state: initial;">
+                    <div>
+                        <img class="element" id="userPic4"
+                             style="width: 222px; height: 162px; margin-top: 0px; margin-left: -1.5px;">
+                    </div>
+                </li>
+                <!--想约-->
+                <li style="  width: 91px;
+                            height: 38px;
+                             left: 77px;
+                             top: 280px;
+                            z-index: 101;
+                            opacity: 1;
+                            color: #FFF;
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 13px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation:wobble 2s ease 6s 1 both;
+                            -webkit-animation-play-state: initial;">
+                    <div class="text-zone element" style="cursor: default; width: 100px; height: 42px;">
+                        <span style="font-size: 26px;color:rgb(56, 4, 4);font-weight:bolder">想约</span>
+                    </div>
+                </li>
+                <!--你-->
+                <li style="  width: 250px;
+                            height: 38px;
+                             left: 105px;
+                             top: 320px;
+                            z-index: 101;
+                            opacity: 1;
+                            color: #FFF;
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 13px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation:fadeInLeft 2s ease 6s 1 both;
+                            -webkit-animation-play-state: initial;">
+                    <div class="text-zone element">
+                        <span style="font-size: 24px;color:rgb(9,59,5);font-weight:bold">你</span>
+                    </div>
+                </li>
+                <!--一起坐坐-->
+                <li style="  width: 240px;
+                            height: 38px;
+                             left: 130px;
+                             top: 340px;
+                            z-index: 101;
+                            opacity: 1;
+                            color: #FFF;
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1.2;
+                            border-radius: 13px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation:fadeInRight 2s ease 6s 1 both;
+                            -webkit-animation-play-state: initial;">
+                    <div class="text-zone element">
+                        <span style="font-size: 20px;color:rgb(71, 10, 10);font-weight:bold">一起坐坐</span>
+                    </div>
+                </li>
+                <li class="content" style="width: 240px;
+                            height: 91px;
+                            z-index: 4;
+                            top: 393px;
+                            left: 78px;
+                            z-index: 4;
+                            opacity: 1;
+                            color: rgb(103, 103, 103);
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1;
+                            border-radius: 0px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;">
+                    <div>
+                        <img class="element" src="../res/images/flower_starts.gif"
+                             style="width: 239px; height: 99px; margin-top: 0px; margin-left: -3.5px;">
+                    </div>
+                </li>
+                <li class="content" style="width: 232px;
+                            height: 99px;
+                            left: 0px;
+                            top: 388px;
+                            z-index: 5;
+                            opacity: 1;
+                            color: rgb(103, 103, 103);
+                            border: 0px solid rgb(0, 0, 0);
+                            padding-bottom: 0px;
+                            padding-top: 0px;
+                            line-height: 1;
+                            border-radius: 0px;
+                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                            -webkit-animation: fadeIn 2s ease 0s 1 both;
+                            -webkit-animation-play-state: initial; ">
+                    <div>
+                        <img class="element" src="../res/images/flower_starts.gif"
+                             style="width: 239px; height: 99px; margin-top: 0px; margin-left: -3.5px;">
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+
+    </div>
+    <!--第二屏-->
+    <div class="section " style="background-image: url(../res/images/bg2.jpg);">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png">
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <!--左右框-->
+                <li style="width: 270px;
+                            height: 347px;
+                            left: 23px;
+                            top: 35px;
+                            z-index: 1;
+                            animation: fadeIn 2s ease 0s both;
+                            -webkit-animation:fadeIn 2s ease 0s both;;
+                           -webkit-animation-play-state: initial;">
+                    <div>
+                        <img class="element" src="../res/images/content_frame.png"
+                             style="width: 270px; height: 395px; margin-top: -24px; margin-left: 0px;">
+                    </div>
+                </li>
+                <!--上-横线-->
+                <li class="content" style="width: 30px;
+                                            height: 265px;
+                                            left: 146px;
+                                            top: -18px;
+                                            z-index: 2;
+                                            -webkit-transform: rotateZ(270deg);
+                                            -webkit-animation: zoomIn 2s ease 1s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/vertical_line.png"
+                             style="width: 35px; height: 265px; margin-top: 0px; margin-left: -2.5px;">
+                    </div>
+                </li>
+                <!--邀请人姓名-->
+                <li class="content" style="width: 124px;
+                                            height: 57px;
+                                            left: 51px;
+                                            top: 50px;
+                                            z-index: 3;
+                                            line-height: 1;
+                                            -webkit-animation: fadeInLeft 2s ease 0s 1 both;">
+                    <div class="element text-zone" style="cursor: default; width: 180px; height: 57px;">
+                        <span id="inventHoster" style="color: rgb(0, 0, 0); font-size: 32px;"></span>
+                    </div>
+                </li>
+                <!--下方内容文字-->
+                <li class="content" style="width: 289px;
+                                            height: 66px;
+                                            left: 18px;
+                                            top: 253px;
+                                            z-index: 4;
+                                            line-height: 1.1;
+                                            -webkit-animation: fadeIn 2s ease 3s 1 both;">
+                    <div class="text-zone element"
+                         style="cursor: default; width: 289px; height: 80px;text-align: center">
+                        <span style="color: rgb(0, 0, 0);font-size: 18px; background-color: initial;"></span>
+                    </div>
+                </li>
+                <li class="content" style="width: 75px;
+                                            height: 115px;
+                                            left: 38px;
+                                            top: 132px;
+                                            z-index: 5;
+                                            line-height: 1;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;">
+                    <div class="element text-zone" style="    cursor: default;width: 75px;height: 115px;">
+                        <span style="font-size: 48px; color: rgb(182, 27, 82);">诚邀</span>
+                    </div>
+                </li>
+                <!--中间-邀请人-->
+                <li class="content" style="width: 105px;
+                                        height: 48px;
+                                        left: 131px;
+                                        top: 165px;
+                                        z-index: 6;
+                                        line-height: 1;
+                                        -webkit-animation: fadeInLeft 2s ease 2s 1 both; ">
+                    <div class="element text-zone" style="cursor: default;width: 105px;height: 48px;">
+                        <span id="inventCustomer" style="color: rgb(0, 0, 0); font-size: 24px;"></span>
+                    </div>
+                </li>
+           </ul>
+        </div>
+    </div>
+    <!--第三屏-->
+    <div class="section" style="background-image: url(../res/images/bg3.png);">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png">
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <!--下方-用户定义图-->
+                <li style="width: 238px;
+                            height: 159px;
+                            left: 44px;
+                            top: 271px;
+                            z-index: 1;
+                            -webkit-animation: flipInY 2s ease 1s 1 both;">
+                    <div>
+                        <img id="userPic2" class="element" src=""
+                             style="width: 237px; height: 187px; margin-top: -14px; margin-left: 0px;">
+                    </div>
+                </li>
+                <!--上方-用户定义图-->
+                <li class="content" style="width: 236px;
+                                            height: 154px;
+                                            left: 45px;
+                                            top: 88px;
+                                            z-index: 2;
+                                            -webkit-animation: flipInY 2s ease 0.5s 1 both;">
+                    <div>
+                        <img id="userPic1" class="element" src=""
+                             style="width: 236px; height: 162px; margin-top: -4px; margin-left: 0px;">
+                    </div>
+                </li>
+                <!--左上-红色菱形-->
+                <li class="content" style="width: 96px;
+                                            height: 96px;
+                                            left: 19px;
+                                            top: 28px;
+                                            z-index: 3;
+                                            -webkit-transform: rotateZ(45deg);
+                                            opacity: 1;
+                                            color: rgb(255, 255, 255);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 16px;
+                                            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
+                                            background-color: rgb(242, 97, 97);">
+                    <div class="element text-zone" style="cursor: default; width: 96px; height: 96px;-webkit-transform: rotateZ(-45deg);padding-left: 20px;">
+                        <div class="text-place-holder"></div>
+                        <span id="userPic1Text" style="text-align: center"></span>
+                    </div>
+                </li>
+                <!--中右-黄色菱形-->
+                <li class="content" style="width: 88px;
+                                            height: 88px;
+                                            left: 210px;
+                                            top: 205px;
+                                            z-index: 4;
+                                            -webkit-transform: rotateZ(45deg);
+                                            opacity: 1;
+                                            color: rgb(255, 255, 255);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 16px;
+                                            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
+                                            background-color: rgb(255, 222, 107);">
+                    <div class="element text-zone" style="cursor: default; width: 88px; height: 88px;-webkit-transform: rotateZ(-45deg);padding-left: 20px;">
+                        <div class="text-place-holder"></div>
+                        <span id="userPic2Text" style="text-align: center"></span>
+                    </div>
+                </li>
+                <!--<li class="content" style="width: 75px;-->
+                                            <!--height: 115px;-->
+                                            <!--left: 38px;-->
+                                            <!--top: 132px;-->
+                                            <!--z-index: 5;-->
+                                            <!--line-height: 1;-->
+                                            <!--transform: none;-->
+                                            <!---webkit-animation: zoomIn 2s ease 0s 1 both;">-->
+                    <!--<div class="element text-zone" style="    cursor: default;width: 75px;height: 115px;">-->
+                        <!--<span style="font-size: 48px; color: rgb(182, 27, 82);">诚邀</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+                <!--<li class="content" style="width: 105px;-->
+                                        <!--height: 48px;-->
+                                        <!--left: 131px;-->
+                                        <!--top: 165px;-->
+                                        <!--z-index: 6;-->
+                                        <!--line-height: 1;-->
+                                        <!--transform: none;-->
+                                        <!---webkit-animation: fadeInLeft 2s ease 2s 1 both; ">-->
+                    <!--<div class="element text-zone" style="cursor: default;width: 105px;height: 48px;">-->
+                        <!--<span style="color: rgb(0, 0, 0); font-size: 24px;">贾瑞峰</span>-->
+                    <!--</div>-->
+                <!--</li>-->
+            </ul>
+        </div>
+    </div>
+    <!--第四屏-->
+    <div class="section" style="background-image: url(../res/images/bg4.jpg);">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png">
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <!--右上-饭店地址-->
+                <li style="width: 192px;
+                            height: 62px;
+                            left: 113px;
+                            top: 31px;
+                            z-index: 1;
+                            line-height: 1;
+                            -webkit-animation: fadeIn 2s ease 1s 1 both;">
+                    <div class="text-zone element"  style="cursor: default; width: 192px; height: 62px;">
+                        <span style="font-size: 16px; color: rgb(255, 255, 255);">
+                            <span id="inventLocation" style="font-size: 16px;"></span>
+                        </span>
+                    </div>
+                </li>
+                <!--左下-优惠活动-->
+                <li class="content" style="width: 194px;
+                                            height: 109px;
+                                            left: 5px;
+                                            top: 330px;
+                                            opacity: 1;
+                                            color: rgb(255, 255, 255);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                                            -webkit-animation: fadeIn 2s ease 1s 1 both;">
+                    <div class="text-zone element"  style="cursor: default; width: 194px; height: 109px;">
+                        <span style="font-size: 16px; color: rgb(255, 255, 255);">
+                            <span id="inventSales" style="font-size: 16px;"></span>
+                        </span>
+                    </div>
+                </li>
+                <!--左上-绿色菱形-->
+                <li class="content" style="width: 85px;
+                                            height: 85px;
+                                            left: 20px;
+                                            top: 19px;
+                                            z-index: 3;
+                                            -webkit-transform: rotateZ(45deg);
+                                            opacity: 1;
+                                            color: rgb(255, 255, 255);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 16px;
+                                            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
+                                            background-color: rgb(176, 237, 166);">
+                    <div class="element text-zone" style="cursor: default; width: 85px; height: 85px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
+                        <span id="inventLocationText" style="text-align: center;color: #000;font-size:18px"></span>
+                    </div>
+                </li>
+                <!--右下-紫色菱形-->
+                <li class="content" style="width: 86px;
+                                            height: 84px;
+                                            left: 208px;
+                                            top: 330px;
+                                            z-index: 4;
+                                            -webkit-transform: rotateZ(45deg);
+                                            opacity: 1;
+                                            color: rgb(255, 255, 255);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 16px;
+                                            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
+                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
+                                            background-color: rgb(149, 177, 232);">
+                    <div class="element text-zone" style="cursor: default; width: 86px; height: 84px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
+                        <span id="inventSalesText" style="text-align: center;color: #000;font-size:18px"></span>
+                    </div>
+                </li>
+                <!--中间用户地图-->
+                <li class="content" style="width: 280px;
+                                            height: 180px;
+                                            left: 20px;
+                                            top: 123px;
+                                            z-index: 8;
+                                            opacity: 1;
+                                            color: rgb(103, 103, 103);
+                                            /*border: 1px solid rgb(255, 255, 255);*/
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 15px;
+                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                                            -webkit-animation: bounceIn 2s ease 1.5s 1 both;">
+                    <div>
+                        <img id="inventLocationPic" class="element" src=""
+                             style="width: 280px; height: 180px;">
+                     </div>
+                </li>
+                <!--底部文字-->
+                <li class="content" style="width: 320px;
+                                        height: 67px;
+                                        left: 0px;
+                                        top: 400px;
+                                        z-index: 6;
+                                        line-height: 1;
+                                        -webkit-animation: fadeIn 2s ease 1s 1 both; ">
+
+                    <div class="element text-zone" style="cursor: default; width: 320px; height: 70px;">
+                        <span id="invertOrderText1" style="font-size: 20px; color: rgb(255, 255, 255);"></span>
+                        <div style="text-align: center;"><span id="inventOrderText2" style="font-size: 20px; color: rgb(255, 255, 255);"></span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--第五屏-->
+    <div class="section" style="background-image: url(../res/images/bg5.jpg);">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png">
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <!--底部-二维码文字-->
+                <li style="width: 320px;
+                        height: 38px;
+                        left: 0px;
+                        top: 359px;
+                        z-index: 1;
+                        opacity: 1;
+                        color: rgb(103, 103, 103);
+                        border: 0px solid rgb(0, 0, 0);
+                        padding-bottom: 0px;
+                        padding-top: 0px;
+                        border-radius: 0px;
+                        box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                        width: 100%;
+                        -webkit-animation: fadeIn 1s ease 1.2s 1 both;">
+                    <div class="text-zone element"  style="cursor: default; height: 38px;">
+                        <div style="text-align: center;">
+                            <span style="color: rgb(86, 54, 121); font-weight: bold; line-height: 12.727272033691406px; font-size: 16px;">长按二维码关注九联</span>
+                        </div>
+                    </div>
+                </li>
+                <!--上方--推广文字-->
+                <li class="content" style="width: 309px;
+                                            height: 115px;
+                                            left: 5px;
+                                            top: 115px;
+                                            z-index: 2;
+                                            line-height: 1;
+                                            height: 100%;
+                                            opacity: 1;
+                                            color: rgb(103, 103, 103);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            border-radius: 0px;
+                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                                            -webkit-animation: fadeInUp 1s ease 0.8s 1 both;">
+                    <div class="text-zone element"  style="cursor: default; width: 309px; height: 115px;">
+                        <div id="1986601358" ctype="2" class="element comp_paragraph editable-text" style="cursor: default; width: 309px; height: 115px;">
+                            <div style="text-align: center;">
+                                <span style="line-height: inherit; font-weight: bold; font-size: 14px; background-color: initial; color: rgb(0, 0, 0);">
+                                    喝放心酒选九联，九联从事酒水预订和配送到雅间的服务，酒水质量保真，还可提供饭店菜品信息和查车信息。
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <!--中间-分隔线-->
+                <li class="content" style="width: 273px;
+                                            height: 24px;
+                                            left: 22px;
+                                            top: 198px;
+                                            z-index: 3;
+                                            -webkit-animation: zoomIn 1s ease 1s 1 both;">
+                    <img class="element" src="../res/images/horizen_line.png"
+                         style="width: 273px; height: 68px; margin-top: -22px; margin-left: 0px;"/>
+                </li>
+                <!--下中-二维码-->
+                <li class="content" style="width: 123px;
+                                            height: 122px;
+                                            left: 99px;
+                                            top: 240px;
+                                            z-index: 4;
+                                            opacity: 1;
+                                            color: rgb(103, 103, 103);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;">
+                    <img class="element" src="../res/images/user_QRCode.jpg"
+                         style="width: 122px; height: 122px; margin-top: 0px; margin-left: 0px;"/>
+                </li>
+                <!--上方商标-->
+                <li class="content" style="width: 99px;
+                                            height: 93px;
+                                            left: 112px;
+                                            top: 25px;
+                                            z-index: 5;">
+
+                    <img class="element" src="../res/images/user_brand.png"
+                         style=" width: 99px; height: 93px; margin-top: 0px; margin-left: 0px;"/>
+                </li>
+                <!--底部链接-->
+                <li class="content" style="width: 320px;
+                                            height: 38px;
+                                            left: 0px;
+                                            top: 417px;
+                                            z-index: 6;
+                                            line-height: 1; ">
+
+                    <div class="element text-zone" style="cursor: default; width: 320px; height: 38px;">
+                        <div style="text-align: center;">
+                            <a href="http://www.baidu.com" target="_blank"
+                                style="font-size: 16px; line-height: inherit; font-weight: bold; color: rgb(211, 65, 65);">点击此链接可查看饭店菜品</a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
+
+<script>
+
+
+    $(function () {
+        var data1 = {
+            content:{
+                inventDate:'2015年10月1日',
+                inventHoster:'刘闯',
+                inventCustomer:"林先生",
+                inventCustomer:'贾瑞丰',
+                inventContent:'我订了西贝西北菜-兴泰店202雅间!',
+                inventLocation:'饭店地址：呼武公路3公里处',
+                inventLocationText:'饭店地址',
+                inventSales:'优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。',
+                inventSalesText:'优惠活动',
+                inventLocationPic:'../res/images/user_location.jpg',
+                inventOrderText1:'感谢您使用百灵鸟2555555订餐',
+                invertOrderText2:'预祝您用餐愉快',
+                userPic1:'../res/images/user_pic_1.jpg',
+                userPic2:'../res/images/user_pic_2.jpg',
+                userPic4:'../res/images/user_pic_4.jpg',
+                userPic1Text:'饭店',
+                userPic2Text:'雅间'
+            }
+        };
+        var data2 = {
+            postUrl:'xxx/xxx.do',
+            postData:{templateID:1}
+        };
+        $.zUIWX(data1);
+    });
+
+
+</script>
+</body>
+</html>

@@ -438,7 +438,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 img {
-    -webkit-user-select: â€? none
+    -webkit-user-select: ï¿½? none
 }
 
 .main {
@@ -1868,7 +1868,7 @@ body * {
     animation-name: fadeInLeft
 }
 
-@-webkit-keyframes fadeInRight {
+@-webkit-keyframes wobble {
     0% {
         opacity: 0;
         -webkit-transform: translate3d(100%,0,0);
