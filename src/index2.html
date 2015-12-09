@@ -36,7 +36,7 @@
 <div class="container" id="container">
     <!--section部分-->
     <!--第一屏-->
-    <div class="section active" style="background-image: url(../res/images/bg1.jpg);">
+    <div class="section" style="background-image: url(../res/images/bg1.jpg);">
         <div class="up-arrow">
             <img src="../res/images/up_arrowpng.png"/>
         </div>
@@ -584,203 +584,487 @@
             </ul>
         </div>
     </div>
-
     <!--第五屏-->
-    <div class="section" style="background-image: url(../res/images/bg4.jpg);">
+    <div class="section" style="background-image: url(../res/images/bg9.jpg);">
         <div class="up-arrow">
             <img src="../res/images/up_arrowpng.png">
         </div>
         <div class="content-wrapper">
             <ul class="content">
-                <!--右上-饭店地址-->
-                <li style="width: 192px;
-                            height: 62px;
-                            left: 113px;
-                            top: 31px;
+                <!--开通微信文字-->
+                <li style="width: 206px;
+                            height: 41px;
+                            left: 11px;
+                            top: 28px;
                             z-index: 1;
                             line-height: 1;
-                            -webkit-animation: fadeIn 2s ease 1s 1 both;">
-                    <div class="text-zone element"  style="cursor: default; width: 192px; height: 62px;">
-                        <span style="font-size: 16px; color: rgb(255, 255, 255);">
-                            <span id="inventLocation" style="font-size: 16px;"></span>
-                        </span>
+                            -webkit-animation: fadeInRight 2s ease 1s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/ktwx.png"
+                             style="width: 100%">
                     </div>
                 </li>
-                <!--左下-优惠活动-->
-                <li class="content" style="width: 194px;
-                                            height: 109px;
-                                            left: 5px;
-                                            top: 330px;
+                <!--关注文字-->
+                <li class="content" style="width: 294px;
+                                            height: 59px;
+                                            left: 12px;
+                                            top: 68px;
                                             opacity: 1;
-                                            color: rgb(255, 255, 255);
-                                            border: 0px solid rgb(0, 0, 0);
                                             padding-bottom: 0px;
                                             padding-top: 0px;
                                             line-height: 1;
                                             border-radius: 0px;
                                             transform: none;
-                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
-                                            -webkit-animation: fadeIn 2s ease 1s 1 both;">
-                    <div class="text-zone element"  style="cursor: default; width: 194px; height: 109px;">
-                        <span style="font-size: 16px; color: rgb(255, 255, 255);">
-                            <span id="inventSales" style="font-size: 16px;"></span>
+                                            -webkit-animation: fadeInRight 2s ease 1.5s 1 both;">
+                    <div class="text-zone element"  style="cursor: default; width: 294px; height: 59px;-webkit-animation: flash 2s ease 4s 1 both;">
+                        <span style="font-size: 14px; color: rgb(182, 27, 82);font-weight: bold">
+                           首先搜索关注"九联"—会员中心—开通微信通知—填写信息—提交
                         </span>
                     </div>
                 </li>
-                <!--左上-绿色菱形-->
-                <li class="content" style="width: 85px;
-                                            height: 85px;
-                                            left: 20px;
-                                            top: 19px;
-                                            z-index: 3;
-                                            -webkit-transform: rotateZ(45deg);
+                <!--关注微信帮助图-->
+                <li class="content" style="width: 302px;
+                                            height: 349px;
+                                            left: 9px;
+                                            top: 147px;
+                                            z-index: 1;
                                             opacity: 1;
-                                            color: rgb(255, 255, 255);
-                                            border: 0px solid rgb(0, 0, 0);
                                             padding-bottom: 0px;
                                             padding-top: 0px;
                                             line-height: 1;
-                                            border-radius: 16px;
-                                            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
-                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
+                                            -webkit-animation: fadeInUp 2s ease 2s 1 both;
                                             background-color: rgb(176, 237, 166);">
-                    <div class="element text-zone" style="cursor: default; width: 85px; height: 85px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
-                        <span id="inventLocationText" style="text-align: center;color: #000;font-size:18px"></span>
-                    </div>
-                </li>
-                <!--右下-紫色菱形-->
-                <li class="content" style="width: 86px;
-                                            height: 84px;
-                                            left: 208px;
-                                            top: 330px;
-                                            z-index: 4;
-                                            -webkit-transform: rotateZ(45deg);
-                                            opacity: 1;
-                                            color: rgb(255, 255, 255);
-                                            border: 0px solid rgb(0, 0, 0);
-                                            padding-bottom: 0px;
-                                            padding-top: 0px;
-                                            line-height: 1;
-                                            border-radius: 16px;
-                                            box-shadow: rgba(0, 0, 0, 0.298039) 0px 0px 6px;
-                                            -webkit-animation: zoomIn 2s ease 0s 1 both;
-                                            background-color: rgb(149, 177, 232);">
-                    <div class="element text-zone" style="cursor: default; width: 86px; height: 84px;-webkit-transform: rotateZ(-45deg);padding: 25px 0px 10px 5px">
-                        <span id="inventSalesText" style="text-align: center;color: #000;font-size:18px"></span>
-                    </div>
-                </li>
-                <!--中间用户地图-->
-                <li class="content" style="width: 280px;
-                                            height: 180px;
-                                            left: 20px;
-                                            top: 123px;
-                                            z-index: 8;
-                                            opacity: 1;
-                                            color: rgb(103, 103, 103);
-                                            /*border: 1px solid rgb(255, 255, 255);*/
-                                            padding-bottom: 0px;
-                                            padding-top: 0px;
-                                            line-height: 1;
-                                            border-radius: 15px;
-                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
-                                            -webkit-animation: bounceIn 2s ease 1.5s 1 both;">
                     <div>
-                        <img id="inventLocationPic" class="element" src=""
-                             style="width: 280px; height: 180px;">
-                     </div>
-                </li>
-                <!--底部文字-->
-                <li class="content" style="width: 320px;
-                                        height: 67px;
-                                        left: 0px;
-                                        top: 400px;
-                                        z-index: 6;
-                                        line-height: 1;
-                                        -webkit-animation: fadeIn 2s ease 1s 1 both; ">
-
-                    <div class="element text-zone" style="cursor: default; width: 320px; height: 70px;">
-                        <span id="invertOrderText1" style="font-size: 20px; color: rgb(255, 255, 255);"></span>
-                        <div style="text-align: center;"><span id="inventOrderText2" style="font-size: 20px; color: rgb(255, 255, 255);"></span>
-                        </div>
+                        <img class="element" src="../res/images/wxym.jpg"
+                             style="width: 100%">
                     </div>
+                </li>
+                <!--AA金骏眉-->
+                <li class="content" style="width: 303px;
+                                            height: 99px;
+                                            left: 11px;
+                                            top: 137px;
+                                            z-index: 2;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            -webkit-animation: fadeInLeft 2s ease 3s 1 both;
+                                           ">
+                    <div class="element text-zone" style="cursor: default; width: 303px; height: 99px;">
+                        <span style="text-align: center;color: #676767;font-size:14px">
+                            AA级金骏眉：原料采自武夷山自然保护区，清明开始采摘，到谷雨为止，全部选用原生态小种野茶的芽尖部分; 经人工揉捻、无烟烘焙而成。
+                        </span>
+                    </div>
+                </li>
+                <!--茶-->
+                <li class="content" style="width: 169px;
+                                            height: 130px;
+                                            left: 30px;
+                                            top: 255px;
+                                            z-index: 2;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            -webkit-animation:zoomIn 2s ease 4s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/tea.gif" style="width: 169px;height: 130px">
+                     </div>
                 </li>
             </ul>
         </div>
     </div>
-    <!--第五屏-->
-    <div class="section" style="background-image: url(../res/images/bg5.jpg);">
+    <!--第六屏-->
+    <div class="section active" style="background-image: url(../res/images/bg9.jpg);">
         <div class="up-arrow">
             <img src="../res/images/up_arrowpng.png">
         </div>
         <div class="content-wrapper">
             <ul class="content">
-
-                <!--上方--推广文字-->
-                <li class="content" style="width: 309px;
-                                            height: 115px;
-                                            left: 5px;
-                                            top: 115px;
-                                            z-index: 2;
+                <!--酒和茶准备好了么-->
+                <li class="content" style="width: 248px;
+                                            height: 43px;
+                                            left: 4px;
+                                            top: 15px;
+                                            z-index: 1;
                                             line-height: 1;
-                                            height: 100%;
                                             opacity: 1;
-                                            color: rgb(103, 103, 103);
-                                            border: 0px solid rgb(0, 0, 0);
+                                            -webkit-animation: fadeInLeft 2s ease 0.5s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/jiuhechawenzi.png"
+                             style="width: 100%">
+                    </div>
+                </li>
+                <!--会动的笑脸-->
+                <li class="content" style="width: 54px;
+                                            height: 60px;
+                                            left: 210px;
+                                            top: 4px;
+                                            z-index: 1;
+                                            line-height: 1;
+                                            opacity: 1;
+                                            -webkit-animation: zoomIn 2s ease 2s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/smile.gif"
+                             style="width: 54px;height: 91px;margin-top: -15px;">
+                    </div>
+                </li>
+                <!--购买与赠送文字-->
+                <li class="content" style="width: 320px;
+                                            height: 62px;
+                                            left: 0px;
+                                            top: 57px;
+                                            opacity: 1;
                                             padding-bottom: 0px;
                                             padding-top: 0px;
+                                            line-height: 1;
                                             border-radius: 0px;
-                                            box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
-                                            -webkit-animation: fadeInUp 1s ease 0.8s 1 both;">
-                    <div class="text-zone element"  style="cursor: default; width: 309px; height: 115px;">
-                        <div id="1986601358" ctype="2" class="element comp_paragraph editable-text" style="cursor: default; width: 309px; height: 115px;">
-                            <div style="text-align: center;">
-                                <span style="line-height: inherit; font-weight: bold; font-size: 14px; background-color: initial; color: rgb(0, 0, 0);">
-                                    喝放心酒选九联，九联从事酒水预订和配送到雅间的服务，酒水质量保真，还可提供饭店菜品信息和查车信息。
-                                </span>
-                            </div>
-                        </div>
+                                            transform: none;
+                                            -webkit-animation:  fadeInUp 2s ease 3s 1 both;">
+                    <div class="text-zone element"  style="cursor: default; width: 320px; height: 59px;-webkit-animation: rubberBand 2s ease 6s 1 both;">
+                        <span style="font-size: 14px; color: rgb(158, 19, 19);font-weight: bold">
+                           购买1盒茶-AA级金骏眉（价值398元）赠送4瓶42°杏花村十年陈酿清酒（价值384元）
+                        </span>
                     </div>
                 </li>
                 <!--中间-分隔线-->
-                <li class="content" style="width: 273px;
+                <li class="content" style="width: 257px;
                                             height: 24px;
-                                            left: 22px;
-                                            top: 198px;
+                                            left: 31px;
+                                            top: 114px;
                                             z-index: 3;
-                                            -webkit-animation: zoomIn 1s ease 1s 1 both;">
+                                            -webkit-animation: zoomIn 2s ease 4s 1 both;">
                     <img class="element" src="../res/images/horizen_line.png"
                          style="width: 273px; height: 68px; margin-top: -22px; margin-left: 0px;"/>
                 </li>
-
-                <!--上方商标-->
-                <li class="content" style="width: 99px;
-                                            height: 93px;
-                                            left: 112px;
-                                            top: 25px;
-                                            z-index: 5;">
-
-                    <img class="element" src="../res/images/user_brand.png"
-                         style=" width: 99px; height: 93px; margin-top: 0px; margin-left: 0px;"/>
+                <!--茶盒-->
+                <li class="content" style="width: 82px;
+                                            height: 68px;
+                                            left: 32px;
+                                            top: 140px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation: fadeInLeft 2s ease 5s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/tea.png"
+                             style="width: 84px;height: 68px;">
+                    </div>
                 </li>
-                <!--底部链接-->
-                <li class="content" style="width: 320px;
+                <!--加号-->
+                <li class="content" style="width: 44px;
+                                            height: 40px;
+                                            left: 118px;
+                                            top: 162px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation: zoomIn 2s ease 5.5s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/jiahao.png">
+                    </div>
+                </li>
+                <!--酒上-->
+                <li class="content" style="width: 91px;
+                                            height: 68px;
+                                            left: 148px;
+                                            top: 123px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:fadeInDown 2s ease 7s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/jiu.png"style="width: 96px;
+                                            height: 68  px;">
+                    </div>
+                </li>
+                <!--酒左-->
+                <li class="content" style="width: 99px;
+                                            height: 75px;
+                                            left: 130px;
+                                            top: 144px;
+                                            opacity: 2;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:fadeInLeft 2s ease 6s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/jiu.png"style="width: 99px;
+                                            height: 75px;">
+                    </div>
+                </li>
+                <!--酒右-->
+                <li class="content" style="width: 99px;
+                                            height: 75px;
+                                            left: 156px;
+                                            top: 144px;
+                                            opacity: 2 ;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:fadeInRight 2s ease 6s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/jiu.png"style="width: 99px;
+                                            height: 75px;">
+                    </div>
+                </li>
+                <!--酒盒-->
+                <li class="content" style="width: 61px;
+                                            height: 61px;
+                                            left: 209px;
+                                            top: 149px;
+                                            opacity: 2 ;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:fadeInRight 2s ease 7.5s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/jiu2.png"style="width: 61px;
+                                            height: 61px;">
+                    </div>
+                </li>
+                <!--茶加酒文字-->
+                <li class="content" style="width: 265px;
                                             height: 38px;
+                                            left: 28px;
+                                            top: 217px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:  zoomIn 2s ease 8.5s 1 both;">
+                    <div class="text-zone element"  style="cursor: default;border: 3px solid rgb(122, 92, 13);  border-radius: 6px;padding: 0px;text-align: center">
+                        <span style="font-size: 14px; color: rgb(0, 0, 0);font-weight: bold">
+                            1盒茶 &nbsp + 4瓶酒 &nbsp 合计
+                        </span>
+                        <span style="font-size: 14px; color: rgb(201, 20, 20);font-weight: bold；color:red">
+                            398
+                        </span>
+                        <span style="font-size: 14px; color: rgb(0, 0, 0);font-weight: bold">
+                            元
+                        </span>
+                    </div>
+                </li>
+                <!--杏花村酒介绍-->
+                <li class="content" style="width: 320px;
+                                            height: 69px;
                                             left: 0px;
-                                            top: 417px;
-                                            z-index: 6;
-                                            line-height: 1; ">
-
-                    <div class="element text-zone" style="cursor: default; width: 320px; height: 38px;">
-                        <div style="text-align: center;">
-                            <a href="http://www.baidu.com" target="_blank"
-                                style="font-size: 16px; line-height: inherit; font-weight: bold; color: rgb(211, 65, 65);">点击此链接可查看饭店菜品</a>
-                        </div>
+                                            top: 258px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation: bounceInUp 2s ease 8s 1 both;">
+                    <div class="text-zone element"  style="cursor: default;text-align: left;line-height: 0.6">
+                        <span style="font-size: 12px; color: rgb(0, 0, 0);">
+                            <span style="font-size: 12px; color: rgb(0, 0, 0);font-weight: bold;">杏花村：</span>
+                            也称"老白汾酒"，因产于山西省汾阳市杏花村，故得名。杏花村是中国著名的酒都。山西省杏花村酒，以清澈干净、清香纯正、绵甜味长即色香味三绝著称于世。
+                        </span>
+                    </div>
+                </li>
+                <!--一键下单-->
+                <li class="content" style="width: 130px;
+                                            height: 38px;
+                                            left: 92px;
+                                            top: 307px;
+                                            opacity: 2 ;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:zoomIn 2s ease 10s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/xiadan.png"style="">
+                    </div>
+                </li>
+                <!--名字 xxx预定了-->
+                <li class="content" style="width: 88px;
+                                            height: 40px;
+                                            left: 26px;
+                                            top: 366px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation: fadeInLeft 2s ease 10s 1 both;">
+                    <div class="text-zone element"  style="cursor: default;text-align: left;line-height: 0.6">
+                        <span style="font-size: 16px; color: rgb(0, 0, 0);font-weight: bold" id="orderName">
+                        </span>
+                    </div>
+                </li>
+                <!--东西 预定了xxx-->
+                <li class="content" style="width: 214px;
+                                            height: 38px;
+                                            left: 86px;
+                                            top: 367px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:fadeInLeft 2s ease 10s 1 both;">
+                    <div class="text-zone element"  style="cursor: default;text-align: left;line-height: 0.6">
+                        <span style="font-size: 18px; color: rgb(182, 27, 82);font-weight: bold" id="orderItem">
+                        </span>
+                    </div>
+                </li>
+                <!--确定-->
+                <li class="content" style="width: 64px;
+                                            height: 40px;
+                                            left: 126px;
+                                            top: 424px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation:zoomIn 2s ease 10s 1 both;">
+                    <div class="text-zone element"  style="cursor: default;
+                        padding: 0;text-align: center;border: 5px solid rgb(255, 0, 0);background-color: rgb(255, 0, 0);border-radius: 15px">
+                        <span style="font-size: 16px; color: white;" >确认
+                        </span>
                     </div>
                 </li>
             </ul>
         </div>
     </div>
-
+    <!--第七屏-->
+    <div class="section" style="background-image: url(../res/images/bg10.jpg);">
+        <div class="up-arrow">
+            <img src="../res/images/up_arrowpng.png">
+        </div>
+        <div class="content-wrapper">
+            <ul class="content">
+                <!--电团图标-->
+                <li style="width: 155px;
+                            height: 95px;
+                            left: 82px;
+                            top: 56px;
+                            z-index: 1;
+                            line-height: 1;
+                            -webkit-animation: zoomIn 2s ease 0s 1 both;">
+                    <div>
+                        <img class="element" src="../res/images/diantuan.png"
+                             style="width: 100%">
+                    </div>
+                </li>
+                <!--电团文字-->
+                <li class="content" style="width: 196px;
+                                            height: 38px;
+                                            left: 63px;
+                                            top: 156px;
+                                            opacity: 1;
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                            transform: none;
+                                            -webkit-animation: zoomIn 2s ease 1s 1 both;">
+                    <div class="text-zone element"  style="cursor: default;">
+                        <span style="font-size: 16px; color: rgb(182, 27, 82);font-weight: bold">
+                           品 位 电 团 精 心 生 活
+                        </span>
+                    </div>
+                </li>
+                <!--中间-分隔线-->
+                <li class="content" style="width: 273px;
+                                            height: 24px;
+                                            left: 24px;
+                                            top: 178px;
+                                            z-index: 3;
+                                            -webkit-animation: zoomIn 1s ease 2s 1 both;">
+                    <img class="element" src="../res/images/horizen_line.png"
+                         style="width: 273px; height: 68px; margin-top: -22px; margin-left: 0px;"/>
+                </li>
+                <!--九联二维码-->
+                <li class="content" style="width: 173px;
+                                            height: 173px;
+                                            left: 73px;
+                                            top: 217px;
+                                            z-index: 4;
+                                            opacity: 1;
+                                            color: rgb(103, 103, 103);
+                                            border: 0px solid rgb(0, 0, 0);
+                                            padding-bottom: 0px;
+                                            padding-top: 0px;
+                                            line-height: 1;
+                                            border-radius: 0px;
+                                             -webkit-animation:zoomIn 2s ease 3s 1 both;">
+                    <img class="element" src="../res/images/user_QRCode.jpg"
+                         style="width: 173px;
+                                            height: 173px margin-top: 0px; margin-left: 0px; -webkit-animation:flash 2s ease 6s 1 both;    border-radius: 18px;"/>
+                </li>
+                <!--二维码文字-->
+                <li style="width: 312px;
+                        height: 38px;
+                        left: 0px;
+                        top: 399px;
+                        z-index: 1;
+                        opacity: 1;
+                        color: rgb(103, 103, 103);
+                        border: 0px solid rgb(0, 0, 0);
+                        padding-bottom: 0px;
+                        padding-top: 0px;
+                        border-radius: 0px;
+                        box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                        width: 100%;
+                        -webkit-animation:fadeIn 1s ease 5s 1 both; ">
+                    <div class="text-zone element"  style="cursor: default; height: 38px;">
+                        <div style="text-align: center;">
+                            <span style="color: rgb(255, 0, 0); font-weight: bold; line-height: 13px; font-size: 16px;">长按二维码或微信搜索“九联”关注</span>
+                        </div>
+                    </div>
+                </li>
+                <!--转发给朋友-->
+                <li class="content" style="width: 200px;
+                           height: 80px;
+                           left: 150px;
+                           top: 420px;
+                           z-index: 105;
+                           opacity: 1;
+                           color: rgb(255, 255, 255);
+                           border: 0px solid rgb(0, 0, 0);
+                           padding-bottom: 0px;
+                           padding-top: 0px;
+                           line-height: 1.2;
+                           border-radius: 0px;
+                           box-shadow: rgba(0, 0, 0, 0.498039) 0px 0px 0px;
+                           -webkit-animation: bounceInLeft 2s ease 4s 1 both;
+                           -webkit-animation-play-state: initial;">
+                    <div class="text-zone element" style="cursor: default;vertical-align: middle">
+                        <a href="javascript:void(0)" style="text-decoration: none;">
+                            <span style="font-size: 18px;color:black;color:white">转发给朋友</span>
+                            <img class="element" src="../res/images/wx.png" style="width: 42px;height: 42px;vertical-align: middle">
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
 
 </div>
 
@@ -798,6 +1082,8 @@
                 inventLocationText:'饭店地址',
                 inventSales:'优惠活动 : 教师节凭教师证可领礼品，部分菜品有折扣。',
                 inventSalesText:'优惠活动',
+                orderName:"林先生",
+                orderItem:"已预订：1盒茶+4瓶酒",
                 inventLocationPic:'../res/images/user_location.jpg',
                 inventOrderText1:'感谢您使用百灵鸟2555555订餐',
                 invertOrderText2:'预祝您用餐愉快',
