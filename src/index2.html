@@ -36,7 +36,7 @@
 <div class="container" id="container">
     <!--section部分-->
     <!--第一屏-->
-    <div class="section active" style="background-image: url(../res/images/bg1.jpg);">
+    <div class="section" style="background-image: url(../res/images/bg1.jpg);">
         <div class="up-arrow">
             <img src="../res/images/up_arrowpng.png"/>
         </div>
@@ -676,7 +676,7 @@
         </div>
     </div>
     <!--第六屏-->
-    <div class="section" style="background-image: url(../res/images/bg9.jpg);">
+    <div class="section active" style="background-image: url(../res/images/bg9.jpg);">
         <div class="up-arrow">
             <img src="../res/images/up_arrowpng.png">
         </div>
@@ -706,7 +706,7 @@
                                             opacity: 1;
                                             -webkit-animation: zoomIn 2s ease 2s 1 both;">
                     <div>
-                        <img class="element" src="../res/images/smile.gif"
+                        <img class="element" src="../res/images/smile2.gif"
                              style="width: 54px;height: 91px;margin-top: -15px;">
                     </div>
                 </li>
@@ -840,9 +840,9 @@
                     </div>
                 </li>
                 <!--茶加酒文字-->
-                <li class="content" style="width: 265px;
+                <li class="content" style="width: 310px;
                                             height: 38px;
-                                            left: 28px;
+                                            left: 5px;
                                             top: 217px;
                                             opacity: 1;
                                             padding-bottom: 0px;
@@ -851,18 +851,24 @@
                                             border-radius: 0px;
                                             transform: none;
                                             -webkit-animation:  zoomIn 2s ease 8.5s 1 both;">
-                    <div class="text-zone element"  style="cursor: default;border: 3px solid rgb(122, 92, 13);  border-radius: 6px;padding: 0px;text-align: center">
-                        <input id="numInput" type="text" maxlength="2" style="width: 30px;height: 25px;text-align: center;" value="1"/>
+                    <div class="text-zone element"  style="cursor: default;border: 3px solid rgb(122, 92, 13);  border-radius: 6px;padding: 0px;text-align: center;" disabled>
+                        <span id="addBtn" style="width: 20px;height: 20px;vertical-align: middle;padding-left: 3px">
+                            <img style="width: 20px;height: 20px" src="../res/images/add.png">
+                        </span>
+                        <input id="numInput" type="text" maxlength="2" style="width: 30px;height: 20px;text-align: center;" value="1" disabled/>
+                        <span id="minusBtn" style="width: 20px;height: 20px;vertical-align: middle">
+                            <img style="width: 20px;height: 20px" src="../res/images/minus.png">
+                        </span>
                         <span style="font-size: 14px; color: rgb(0, 0, 0);font-weight: bold">
-                            盒茶 &nbsp +
+                            盒茶&nbsp +
                         </span>
                         <span style="font-size: 14px; color: rgb(0, 0, 0);font-weight: bold" id="numWine">
 
                         </span>
                         <span style="font-size: 14px; color: rgb(0, 0, 0);font-weight: bold">
-                            瓶酒 &nbsp 合计
+                            瓶酒&nbsp合计
                         </span>
-                        <span id="totalPrice" style="font-size: 14px; color: rgb(201, 20, 20);font-weight: bold；color:red">
+                        <span id="totalPrice" style="font-size: 14px; color: rgb(201, 20, 20);font-weight: bold;color:red">
                             0
                         </span>
                         <span style="font-size: 14px; color: rgb(0, 0, 0);font-weight: bold">
@@ -923,7 +929,7 @@
                     </div>
                 </li>
                 <!--东西 预定了xxx-->
-                <li class="content" style="width: 230px;
+                <li class="content" style="width: 250px;
                                             height: 38px;
                                             left: 86px;
                                             top: 367px;
@@ -1110,16 +1116,25 @@
         var unitPrice = 398;
         var num = $("#numInput").prop("value");
         changeOrderItem(num);
-        $("#numInput").on("input",function(){
-            var num = $(this).prop("value");
-            changeOrderItem(num);
+        $("#addBtn").on("click",function(){
+           if(num<100){
+               num++;
+               changeOrderItem(num);
+           }
+        });
+        $("#minusBtn").on("click",function(){
+           if(num>0){
+               num--;
+               changeOrderItem(num);
+           }
         });
         function changeOrderItem(num){
             var price = num*unitPrice;
             $("#totalPrice").html(price);
             $("#numWine").html(num*4);
+            $("#numInput").prop("value",num);
             if(num>0){
-                $("#orderItem").html("已预订："+num+"盒茶"+num*4+"瓶酒");
+                $("#orderItem").html("已预订："+num+"盒茶+"+num*4+"瓶酒");
             }else{
                 $("#orderItem").html("未预定");
             }
