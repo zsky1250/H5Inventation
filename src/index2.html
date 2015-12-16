@@ -1116,13 +1116,13 @@
         var unitPrice = 398;
         var num = $("#numInput").prop("value");
         changeOrderItem(num);
-        $("#addBtn").on("click",function(){
+        $("#addBtn").on("touchend",function(){
            if(num<100){
                num++;
                changeOrderItem(num);
            }
         });
-        $("#minusBtn").on("click",function(){
+        $("#minusBtn").on("touchend",function(){
            if(num>0){
                num--;
                changeOrderItem(num);
