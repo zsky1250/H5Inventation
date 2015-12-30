@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewPort" name="viewport"
+          content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>
+    <title>登录页</title>
+    <link rel="stylesheet" href="../res/css/login.css"/>
+    <script src="../res/js/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+    <div class="login-panel" id="main">
+        <div class="brand">
+            <img src="../res/images/brand-icon.jpg">
+        </div>
+        <div class="phone">
+            <img src="../res/images/phone.jpg">
+        </div>
+        <div class="triangle" id="triangle">
+            <img src="../res/images/triangle.png">
+        </div>
+        <div class="pwd" id="pwd">
+            <form>
+                <input type="password"/>
+                <input type="submit"/>
+            </form>
+        </div>
+    </div>
+<script type="text/javascript">
+    $(function () {
+        AdjustViewPort();
+        var radio = 129/193;
+        var pwdHeight = $("#triangle").width()/radio
+        $("#pwd").height(pwdHeight).css("marginTop",(pwdHeight/2-75)+"px");
+    });
+
+    function AdjustViewPort() {
+        var leftSpace, topSpace, scaleFactor = 1;
+        var width = $(window).width();
+        var height = $(window).height();
+        if (width / height >= 320 / 486) {
+            scaleFactor = height / 486;
+        } else {
+            scaleFactor = width / 320;
+        }
+        $('#viewPort').attr("content", "width=320, initial-scale=" + scaleFactor + ", maximum-scale=" + scaleFactor + ", user-scalable=no");
+        if (isWeixin() && (navigator.userAgent.indexOf("Android") > -1 || navigator.userAgent.indexOf("Linux") > -1)) {
+            var factor = Math.max(320 / width, 486 / height);
+            if (factor < 1) {
+                factor = factor * 160;
+            }
+            factor = parseInt(factor);
+            $("#viewPort").attr("content", "width=320, target-densitydpi=" + factor)
+        }
+    }
+    function isWeixin() {
+        var userAgent = navigator.userAgent.toLowerCase();
+        return "micromessenger" == userAgent.match(/MicroMessenger/i) ? !0 : !1
+    }
+</script>
+</body>
+</html>
+
