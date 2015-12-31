@@ -28,10 +28,10 @@
     </div>
 <script type="text/javascript">
     $(function () {
-        AdjustViewPort();
         var radio = 129/193;
         var pwdHeight = $("#triangle").width()/radio;
         $("#pwd").height(pwdHeight).css("marginTop",(pwdHeight/2-75)+"px");
+        AdjustViewPort();
     });
 
     function AdjustViewPort() {
@@ -50,7 +50,7 @@
                 factor = factor * 160;
             }
             factor = parseInt(factor);
-            $("#viewPort").attr("content", "width=320, target-densitydpi=" + factor)
+            $("#viewPort").attr("content", "width=320, target-densitydpi=" + factor  + ", user-scalable=no")
         }
     }
     function isWeixin() {
