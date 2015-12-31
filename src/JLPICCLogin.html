@@ -30,7 +30,7 @@
     $(function () {
         AdjustViewPort();
         var radio = 129/193;
-        var pwdHeight = $("#triangle").width()/radio
+        var pwdHeight = $("#triangle").width()/radio;
         $("#pwd").height(pwdHeight).css("marginTop",(pwdHeight/2-75)+"px");
     });
 
@@ -55,6 +55,7 @@
     }
     function isWeixin() {
         var userAgent = navigator.userAgent.toLowerCase();
+        return true;
         return "micromessenger" == userAgent.match(/MicroMessenger/i) ? !0 : !1
     }
 </script>
