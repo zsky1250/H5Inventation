@@ -2626,6 +2626,7 @@
                 css3:true,
                 onLeave:function(pre,post,direction){
                     $(".section").eq(post-1).addClass("moving");
+
                 },
                 afterLoad:function(link,index){
                     $(".moving").removeClass("moving");

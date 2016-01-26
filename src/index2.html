@@ -446,15 +446,16 @@
                     </div>
                 </li>
                 <!--地图-->
-                <li class="content" style="width: 273px;
+                <li class="content" style="
+                width:310px;
                                         height: 257px;
-                                        left: 24px;
+                                        left: 5px;
                                         top: 106px;
                                         z-index: 1;
                                         line-height: 1;
                                         transform: none;
                                         -webkit-animation: bounceIn 2s ease 3s 1 both; ">
-                    <div class="element text-zone" style="border: 1px solid rgb(255, 255, 255);cursor: default;width: 273px;
+                    <div class="element text-zone" style="border: 1px solid rgb(255, 255, 255);cursor: default;width: 310px;
                                         height: 257px;   border-radius: 15px;">
                     </div>
                 </li>
@@ -896,21 +897,21 @@
                     </div>
                 </li>
                 <!--一键下单-->
-                <li class="content" style="width: 130px;
-                                            height: 38px;
-                                            left: 92px;
-                                            top: 307px;
-                                            opacity: 2 ;
-                                            padding-bottom: 0px;
-                                            padding-top: 0px;
-                                            line-height: 1;
-                                            border-radius: 0px;
-                                            transform: none;
-                                            -webkit-animation:zoomIn 2s ease 10s 1 both;">
-                    <div>
-                        <img class="element" src="../res/images/xiadan.png"style="">
-                    </div>
-                </li>
+                <!--<li class="content" style="width: 130px;-->
+                                            <!--height: 38px;-->
+                                            <!--left: 92px;-->
+                                            <!--top: 307px;-->
+                                            <!--opacity: 2 ;-->
+                                            <!--padding-bottom: 0px;-->
+                                            <!--padding-top: 0px;-->
+                                            <!--line-height: 1;-->
+                                            <!--border-radius: 0px;-->
+                                            <!--transform: none;-->
+                                            <!---webkit-animation:zoomIn 2s ease 10s 1 both;">-->
+                    <!--<div>-->
+                        <!--<img class="element" src="../res/images/xiadan.png"style="">-->
+                    <!--</div>-->
+                <!--</li>-->
                 <!--名字 xxx预定了-->
                 <li class="content" style="width: 88px;
                                             height: 40px;
@@ -947,22 +948,21 @@
                     </div>
                 </li>
                 <!--确定-->
-                <li class="content" style="width: 64px;
+                <li class="content" style="width: 120px;
                                             height: 40px;
-                                            left: 126px;
-                                            top: 424px;
-                                            opacity: 1;
+                                            left: 92px;
+                                            top: 327px;
+                                            opacity: 2 ;
                                             padding-bottom: 0px;
                                             padding-top: 0px;
                                             line-height: 1;
                                             border-radius: 0px;
                                             transform: none;
                                             -webkit-animation:zoomIn 2s ease 10s 1 both;">
-                    <div class="text-zone element"  style="cursor: default;
+                        <div class="text-zone element"  style="cursor: default;
                         padding: 0;text-align: center;border: 5px solid rgb(255, 0, 0);background-color: rgb(255, 0, 0);border-radius: 15px">
-                        <span style="font-size: 16px; color: white;" >确认
-                        </span>
-                    </div>
+                        <span style="font-size: 16px; color: white;" >一键下单</span>
+                        </div>
                 </li>
             </ul>
         </div>
@@ -1140,6 +1140,20 @@
             }
         }
 
+        $("#addorder").click(function(){
+            var formData = {
+                price:$("#totalPrice").html(),
+                quantity:$("#numInput").prop()
+            }
+            $.ajax("abbc/sdf.jsp", {
+                type: 'POST',
+                data:formData
+            }).done(function(){
+                alert("提交成功");
+            }).fail(function(){
+                alert("提交失败");
+            });
+        });
     });
 
 

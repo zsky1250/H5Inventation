@@ -3,5 +3,6 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/res/images/musicIcon.svg" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/res/js/eqShow.js" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/res/js/zUIWX.js" charset="UTF-8" />
   </component>
 </project>
