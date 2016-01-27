@@ -15,12 +15,13 @@ body{
     float: left;
     width: 100%;
     border-bottom: 1px solid #f5f5f5;
-    height: 20px;
+    height: 40px;
     padding: 10px;
     text-align: center;
     font-size: 20px;
     font-weight: bold;
-    margin-bottom: 20px;
+    margin-top:10px;
+    margin-bottom: 10px;
 }
 
 .titleBar .back{
@@ -63,7 +64,7 @@ body{
 }
 
 .chooseDateDiv .timeBar{
-    width: 30px;
+    width: 50px;
     margin-top:5px;
     position: absolute;
 }
@@ -77,15 +78,15 @@ body{
 }
 
 .chooseDateDiv .timeBar .plus{
-    margin-top:10px;
     background: url("../images/plus.png");
     background-size: cover;
     width: 30px;
     height: 30px;
+    margin:10px auto;
 }
 
 .chooseDateDiv .timeBar .minus{
-    margin-buttom:10px;
+    margin:10px auto;
     background: url("../images/minus.png");
     background-size: cover;
     width: 30px;
@@ -95,12 +96,14 @@ body{
 .chooseDateDiv .timeBar input{
     border:1px #4f4f4f solid;
     width: 28px;
+    display: block;
     height: 40px;
     color: #2b2b2b;
     margin: 10px auto;
     text-align: center;
     font-weight: bold;
     font-size: 16px;
+    -webkit-appearance:none;
 }
 
 .listItem{

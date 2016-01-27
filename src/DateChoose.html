@@ -5,55 +5,55 @@
     <meta charset="utf-8"/>
     <title>选择日期</title>
     <!--<meta id="viewPort" name="viewport"-->
-    <!--content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>-->
+          <!--content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>-->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="css/DateChoose.css"/>
-    <script src="js/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../res/css/DateChoose.css"/>
+    <script src="../res/js/jquery-1.11.3.min.js"></script>
 </head>
 <body>
-<div class="titleBar">
-    选择时间
-    <span class="back"><img src="images/fh.png" width="15"></span>
-    <span class="finish">完成</span>
-</div>
-
-<div id="startTime" class="chooseDateDiv">
-    <span class="title">开始时间</span>
-    <div class="timeBar hour">
-        <div class="plus"></div>
-        <input type="text" disabled value="15"/>
-        <div class="minus"></div>
+    <div class="titleBar">
+        选择时间
+        <span class="back"><img src="../res/images/fh.png" width="15"></span>
+        <span class="finish">完成</span>
     </div>
-    <div class="timeBar min">
-        <div class="plus"></div>
-        <input type="text" disabled/>
-        <div class="minus"></div>
-    </div>
-</div>
 
-<div id="endTime" class="chooseDateDiv">
-    <span class="title">结束时间</span>
-    <div class="timeBar hour">
-        <div class="plus"></div>
-        <input type="text" disabled value="15"/>
-        <div class="minus"></div>
+    <div id="startTime" class="chooseDateDiv">
+        <span class="title">开始时间</span>
+        <div class="timeBar hour">
+            <div class="plus"></div>
+            <input type="text" disabled value="15"/>
+            <div class="minus"></div>
+        </div>
+        <div class="timeBar min">
+            <div class="plus"></div>
+            <input type="text" disabled/>
+            <div class="minus"></div>
+        </div>
     </div>
-    <div class="timeBar min">
-        <div class="plus"></div>
-        <input type="text" disabled/>
-        <div class="minus"></div>
+
+    <div id="endTime" class="chooseDateDiv">
+        <span class="title">结束时间</span>
+        <div class="timeBar hour">
+            <div class="plus"></div>
+            <input type="text" disabled value="15"/>
+            <div class="minus"></div>
+        </div>
+        <div class="timeBar min">
+            <div class="plus"></div>
+            <input type="text" disabled/>
+            <div class="minus"></div>
+        </div>
     </div>
-</div>
 
-<div id="startTimeList" class="listItem">
-    <span class="itemName">开始时间</span>
-    <span class="itemContent">12:20</span>
-</div>
+    <div id="startTimeList" class="listItem">
+        <span class="itemName">开始时间</span>
+        <span class="itemContent">12:20</span>
+    </div>
 
-<div id="endTimeList" class="listItem">
-    <span class="itemName">结束时间</span>
-    <span class="itemContent">15:30</span>
-</div>
+    <div id="endTimeList" class="listItem">
+        <span class="itemName">结束时间</span>
+        <span class="itemContent">15:30</span>
+    </div>
 
 <script type="text/javascript">
     $(function(){
@@ -73,7 +73,7 @@
             //小时增加
             $hour.children('.plus').on('touchstart',function(){
                 timeAdd($hourNum,24);
-                hourInterval = window.setInterval(timeAdd,380,$hourNum,24);
+                hourInterval = window.setInterval(timeAdd,600,$hourNum,24);
             });
             $hour.children('.plus').on('touchend',function(){
                 window.clearInterval(hourInterval);
@@ -82,7 +82,7 @@
             //小时减少
             $hour.children('.minus').on('touchstart',function(){
                 timeMinus($hourNum,24);
-                hourInterval = window.setInterval(timeMinus,380,$hourNum,24);
+                hourInterval = window.setInterval(timeMinus,600,$hourNum,24);
             });
             $hour.children('.minus').on('touchend',function(){
                 window.clearInterval(hourInterval);
@@ -91,7 +91,7 @@
             //分钟增加
             $min.children('.plus').on('touchstart',function(){
                 timeAdd($minNum,60);
-                minInterval = window.setInterval(timeAdd,380,$minNum,60);
+                minInterval = window.setInterval(timeAdd,600,$minNum,60);
             });
             $min.children('.plus').on('touchend',function(){
                 window.clearInterval(minInterval);
@@ -100,7 +100,7 @@
             //小时减少
             $min.children('.minus').on('touchstart',function(){
                 timeMinus($minNum,24);
-                minInterval = window.setInterval(timeMinus,380,$minNum,60);
+                minInterval = window.setInterval(timeMinus,600,$minNum,60);
             });
             $min.children('.minus').on('touchend',function(){
                 window.clearInterval(minInterval);
