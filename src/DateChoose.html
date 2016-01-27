@@ -17,9 +17,136 @@
         <span class="finish">完成</span>
     </div>
 
-    <div class="chooseDateDiv">
-        <span>开始时间</span>
+    <div id="startTime" class="chooseDateDiv">
+        <span class="title">开始时间</span>
+        <div class="timeBar hour">
+            <div class="plus"></div>
+            <input type="text" disabled value="15"/>
+            <div class="minus"></div>
+        </div>
+        <div class="timeBar min">
+            <div class="plus"></div>
+            <input type="text" disabled/>
+            <div class="minus"></div>
+        </div>
     </div>
+
+    <div id="endTime" class="chooseDateDiv">
+        <span class="title">结束时间</span>
+        <div class="timeBar hour">
+            <div class="plus"></div>
+            <input type="text" disabled value="15"/>
+            <div class="minus"></div>
+        </div>
+        <div class="timeBar min">
+            <div class="plus"></div>
+            <input type="text" disabled/>
+            <div class="minus"></div>
+        </div>
+    </div>
+
+    <div id="startTimeList" class="listItem">
+        <span class="itemName">开始时间</span>
+        <span class="itemContent">12:20</span>
+    </div>
+
+    <div id="endTimeList" class="listItem">
+        <span class="itemName">结束时间</span>
+        <span class="itemContent">15:30</span>
+    </div>
+
+<script type="text/javascript">
+    $(function(){
+        function initDateControl(panelID,hour,min){
+            var $hour = $("#"+panelID).children(".hour");
+            var $min = $("#"+panelID).children(".min");
+            if(!hour){
+                hour = "00";
+            }
+            if(!min){
+                min="00";
+            }
+            var $hourNum = $hour.children('input').val(hour);
+            var $minNum = $min.children('input').val(min);
+            var hourInterval;
+            var minInterval;
+            //小时增加
+            $hour.children('.plus').on('touchstart',function(){
+                timeAdd($hourNum,24);
+                hourInterval = window.setInterval(timeAdd,600,$hourNum,24);
+            });
+            $hour.children('.plus').on('touchend',function(){
+                window.clearInterval(hourInterval);
+                showResultInList(panelID);
+            });
+            //小时减少
+            $hour.children('.minus').on('touchstart',function(){
+                timeMinus($hourNum,24);
+                hourInterval = window.setInterval(timeMinus,600,$hourNum,24);
+            });
+            $hour.children('.minus').on('touchend',function(){
+                window.clearInterval(hourInterval);
+                showResultInList(panelID);
+            });
+            //分钟增加
+            $min.children('.plus').on('touchstart',function(){
+                timeAdd($minNum,60);
+                minInterval = window.setInterval(timeAdd,600,$minNum,60);
+            });
+            $min.children('.plus').on('touchend',function(){
+                window.clearInterval(minInterval);
+                showResultInList(panelID);
+            })
+            //小时减少
+            $min.children('.minus').on('touchstart',function(){
+                timeMinus($minNum,24);
+                minInterval = window.setInterval(timeMinus,600,$minNum,60);
+            });
+            $min.children('.minus').on('touchend',function(){
+                window.clearInterval(minInterval);
+                showResultInList(panelID);
+            })
+            showResultInList(panelID);
+        }
+
+        function timeAdd($field,limit){
+            var value = parseInt($field.val());
+            if(value<limit-1){
+                value++;
+                if(value<10){
+                    value="0"+value;
+                }
+                $field.val(value);
+            }else{
+                $field.val(00);
+            }
+        }
+
+        function timeMinus($field,limit){
+            var value = parseInt($field.val());
+            limit = parseInt(limit);
+            if(value<1){
+                $field.val(limit-1);
+            }else{
+                value--;
+                if(value<10){
+                    value="0"+value;
+                }
+                $field.val(value);
+            }
+        }
+
+        function showResultInList(panelID){
+            var $hour = $("#"+panelID).find(".hour>input");
+            var $min = $("#"+panelID).find(".min>input");
+            $("#"+panelID+"List").children(".itemContent").text($hour.val()+":"+$min.val());
+        }
+
+        initDateControl("startTime");
+        initDateControl("endTime");
+
+    });
+</script>
 
 </body>
 </html>
