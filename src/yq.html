@@ -1,19 +1,117 @@
 <!DOCTYPE html>
 <html>
-<head lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta charset="utf-8"/>
-    <title>选择日期</title>
+    <title>邀请函2.0</title>
     <!--<meta id="viewPort" name="viewport"-->
     <!--content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <link rel="stylesheet" href="../res/css/DateChoose.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="../res/css/yq.css"/>
+
     <script src="../res/js/jquery-1.11.3.min.js"></script>
+    <script src="../res/plugins/swiper-3.3.1/swiper.jquery.min.js"></script>
+    <script src="../res/plugins/swiper-3.3.1/swiper.animate1.0.2.min.js"></script>
 </head>
 <body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div id="slide1" class="swiper-slide">
+
+            <div class="host">
+                <span id="host">林先生</span>
+                <span style="">邀请</span>
+            </div>
+
+            <div class="qin move"  effect="fadeIn" delay="0.6s">
+                <span>亲</span>
+            </div>
+
+            <div class="pic location1 move"  effect="fadeInDown"  delay="1.0s">
+                <img src="../res/img/user_pic_1.JPG"/>
+            </div>
+
+            <div class="time move"  effect="bounceInUp" duration="2.0s" delay="1.3s">
+                <span>16年1月1号中午有空么</span>
+            </div>
+
+            <div class="room move"  effect="bounceInUp" duration="2.0s" delay="2.0s">
+                <span>我订了西贝西北菜-兴泰店202雅间</span>
+            </div>
+
+            <div class="pic location2 move"  effect="fadeInUp" delay="2.5s">
+                <img src="../res/img/user_pic_2.JPG"/>
+            </div>
+
+            <div class="xiangyue move"  effect="fadeIn" delay="3.5s">
+                <span class="move"  effect="wobble" delay="4.0s">想约</span>
+            </div>
+            <div class="ni move"  effect="bounceInLeft" delay="3s">
+                <span class="move"  effect="rubberBand" delay="4.5s">你</span>
+            </div>
+            <div class="yiqizuozuo move"  effect="fadeInRight" delay="3s">
+                <span class="move"  effect="bounce" delay="4.5s">一起坐坐</span>
+            </div>
 
 
 
+        </div>
+        <div class="swiper-slide">Slide 2</div>
+        <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination">
+        <span id="progressCustom" class="progress"></span>
+        <span class="fraction"><span id="currentFraction"></span>/<span id="totalFraction"></span></span>
+    </div>
+    <!--向上箭头-->
+    <div class="up-arrow"></div>
 
+    <!-- 如果需要导航按钮 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+
+    <!-- 如果需要滚动条 -->
+    <!--<div class="swiper-scrollbar"></div>-->
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        var mySwiper = new Swiper ('.swiper-container', {
+            direction: 'vertical',
+//            longSwipes: true,//支持长慢滑动
+//          longSwipesRatio : 0.1,//支持长滑动的情况下，滑动至少百分之多少长度会触发翻页 0.5-0.1 默认0.5
+            longSwipesMs : 1000,//滑动操作持续多长时间算常翻页
+
+            // 如果需要分页器
+            pagination: '.swiper-pagination',
+            paginationType : 'custom',
+            paginationCustomRender: function (swiper, current, total) {
+               var scaleX = current / total,scaleY = 1;
+               $("#progressCustom").transform('translate3d(0,0,0) scaleX(' + scaleX + ') scaleY(' + scaleY + ')').transition(300);
+               $("#currentFraction").text(current);
+               $("#totalFraction").text(total);
+            },
+
+            onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
+                swiperAnimateCache(swiper); //隐藏动画元素
+                swiperAnimate(swiper); //初始化完成开始动画
+            },
+            onSlideChangeEnd: function(swiper){
+                swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+            }
+
+            // 如果需要前进后退按钮
+//            nextButton: '.swiper-button-next',
+//            prevButton: '.swiper-button-prev',
+
+            // 如果需要滚动条
+//            scrollbar: '.swiper-scrollbar',
+        })
+    })
+
+</script>
 </body>
 </html>

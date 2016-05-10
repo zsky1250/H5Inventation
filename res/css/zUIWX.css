@@ -199,22 +199,6 @@ body * {
     }
 }
 
-@-moz-keyframes start {
-    0%,30% {
-        opacity: 0;
-        -moz-transform: translate(0,10px)
-    }
-
-    60% {
-        opacity: 1;
-        -moz-transform: translate(0,0)
-    }
-
-    100% {
-        opacity: 0;
-        -moz-transform: translate(0,-8px)
-    }
-}
 
 @keyframes start {
     0%,30% {
@@ -231,6 +215,11 @@ body * {
         opacity: 0;
         transform: translate(0,-8px)
     }
+}
+
+.start{
+    -webkit-animation-name: start;
+    animation-name: start
 }
 @-webkit-keyframes fadeInDown {
     0% {
