@@ -129,9 +129,9 @@ If you want this to swipe horizontally, just use the horizontal settings instead
             direction: 'vertical',
 //            shortSwipes:false,//短滑动
             longSwipes: false,//支持长慢滑动
-            longSwipesRatio : -0.5,//支持长滑动的情况下，滑动至少百分之多少长度会触发翻页 0.5-0.1 默认0.5
+//            longSwipesRatio : 0.5,//支持长滑动的情况下，滑动至少百分之多少长度会触发翻页 0.5-0.1 默认0.5
             longSwipesMs : 300,//滑动操作持续多长时间算常翻页
-            touchRatio:1,
+//            touchRatio:1,//手指滑动和屏幕真是移动的比率。默认1：1  可以0.5:1 或者 -0.5:1--即反向
             // 如果需要分页器
             pagination: '.swiper-pagination',
             paginationType : 'custom',
@@ -159,9 +159,9 @@ If you want this to swipe horizontally, just use the horizontal settings instead
 //                    swiper.lockSwipes();
 //                }
                 if(swiper.activeIndex==1){
-                    swiper.params.touchRatio = 0.001;
+                    swiper.params.followFinger = false;
                 }else{
-                    swiper.params.touchRatio = 1;
+                    swiper.params.followFinger = true;
                 }
             },
             onTouchMove: function(swiper, event){
@@ -176,7 +176,6 @@ If you want this to swipe horizontally, just use the horizontal settings instead
                 if(swiper.activeIndex==1){
                     offset+=swiper.touches.diff;
                     console.log("final:"+offset);
-
                     if(offset>threshold_top){
                         offset=threshold_top;
                         $("#list").transform('translate3d(0px,'+offset+'px, 0px)');
