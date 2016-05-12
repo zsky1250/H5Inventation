@@ -3219,3 +3219,40 @@ Copyright (c) 2015 Daniel Eden
   -webkit-animation-name: start;
   animation-name: start
 }
+
+.rotating {
+  -webkit-animation: rotating 1.2s linear infinite;
+  -moz-animation: rotating 1.2s linear infinite;
+  -o-animation: rotating 1.2s linear infinite;
+  animation: rotating 1.2s linear infinite
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg)
+  }
+
+  to {
+    -webkit-transform: rotate(360deg)
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
+}
+
+@-moz-keyframes rotating {
+  from {
+    -moz-transform: rotate(0deg)
+  }
+
+  to {
+    -moz-transform: rotate(360deg)
+  }
+}

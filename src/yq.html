@@ -12,6 +12,9 @@
     <script src="../res/js/jquery-1.11.3.min.js"></script>
     <script src="../res/plugins/swiper-3.3.1/swiper.jquery.min.js"></script>
     <script src="../res/plugins/swiper-3.3.1/swiper.animate1.0.2.min.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?type=quick&ak=C7483ab05109bc4fd92aa64babec365c&v=1.0"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?type=quick&file=api&ak=C7483ab05109bc4fd92aa64babec365c&t=20140109092002"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/getscript?type=quick&file=feature&ak=C7483ab05109bc4fd92aa64babec365c&t=20140109092002"></script>
 </head>
 <body>
 <div class="swiper-container">
@@ -27,7 +30,7 @@
                 <span>亲</span>
             </div>
 
-            <div class="pic location1 move"  effect="fadeInDown"  delay="1.0s">
+            <div class="pic location-pic1 move"  effect="fadeInDown"  delay="1.0s">
                 <img src="../res/img/user_pic_1.JPG"/>
             </div>
 
@@ -39,7 +42,7 @@
                 <span>我订了西贝西北菜-兴泰店202雅间</span>
             </div>
 
-            <div class="pic location2 move"  effect="fadeInUp" delay="2.5s">
+            <div class="pic location-pic2 move"  effect="fadeInUp" delay="2.5s">
                 <img src="../res/img/user_pic_2.JPG"/>
             </div>
 
@@ -56,7 +59,18 @@
 
 
         </div>
-        <div id="slide2" class="swiper-slide" style="background: cadetblue">
+        <div id="slide2" class="swiper-slide">
+            <div class="yellow-square move"  effect="zoomIn" delay="0.5s">
+                <span>要认准饭店地址哦</span>
+            </div>
+            <div id="location"  class="location move" effect="fadeIn" delay="1.2s">
+                地址：<br/><span>内蒙古饭店东巷塞上府东</span>
+            </div>
+            <div id="map" class="map move" effect="bounceIn" duration="1.0s" delay="1.8s">
+
+            </div>
+        </div>
+        <div id="slide3" class="swiper-slide" style="background: cadetblue">
             <div id="list-wrapper" style="height: 80%;width: 90%;position: absolute;top:10%;left: 5%;overflow:hidden">
                 <div id="list">                <span>I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
 
@@ -97,9 +111,35 @@ If you want this to swipe horizontally, just use the horizontal settings instead
                 </div>
             </div>
         </div>
+        <div id="slide4" class="swiper-slide">
+            <div class="diantuan move" effect="zoomIn" delay="0.2s">
+                <img src="../res/img/diantuan.png">
+            </div>
+            <div class="jingxinshenghuo move" effect="slideInLeft" delay="1s">
+                <span>品 味 电 团 精 心 生 活</span>
+            </div>
+            <div class="line move" effect="zoomIn" delay="1.5s">
+                <img src="../res/img/horizen_line.png">
+            </div>
+            <div class="fangxinjue move" effect="slideInRight" delay="1s">
+                <span>喝 放 心 酒 选 九 联</span>
+            </div>
+            <div class="bendi move" effect="fadeInDownBig" delay="1.5s">
+                <span>内蒙古本地020</span>
+            </div>
+            <div class="weixinguanzhu move" effect="fadeInUpBig" delay="2s">
+                <span>微信关注“九联”米面油酒茶，20分钟送达</span>
+            </div>
+            <div class="hand move" effect="rotateInDownRight" delay="3s">
+                <img src="../res/img/hand.png">
+            </div>
+            <div class="guahaocha move" effect="flipInX" delay="3s">
+                <span>动动小手，刮好茶</span>
+            </div>
+        </div>
 
 
-        <div class="swiper-slide">Slide 3</div>
+
     </div>
     <!-- 如果需要分页器 -->
     <div class="swiper-pagination">
@@ -108,7 +148,10 @@ If you want this to swipe horizontally, just use the horizontal settings instead
     </div>
     <!--向上箭头-->
     <div class="up-arrow"></div>
-
+    <!--音乐播放-->
+    <div id="music" class="music rotating">
+        <audio loop="loops" src="../res/audio/bgmusic.mp3" id="bgmusic" autoplay="autoplay"></audio>
+    </div>
     <!-- 如果需要导航按钮 -->
     <!--<div class="swiper-button-prev"></div>-->
     <!--<div class="swiper-button-next"></div>-->
@@ -135,6 +178,7 @@ If you want this to swipe horizontally, just use the horizontal settings instead
             // 如果需要分页器
             pagination: '.swiper-pagination',
             paginationType : 'custom',
+            initialSlide :3,
 
             // 如果需要前进后退按钮
 //            nextButton: '.swiper-button-next',
@@ -202,14 +246,41 @@ If you want this to swipe horizontally, just use the horizontal settings instead
                 swiper : mySwiper
             };
 
-//            this.stopTouchRatio(){
-//                this.swiper.param.touchRatio = 0;
-//            };
-//
-//            this.recoveryTouchRatio(){
-//                this.swiper.params.touchRatio = DEFAULTS.touchRatio;
-//            };
+        };
+
+        //music
+        var playing = false;
+        $('#music').click(function(){
+            if(playing=='on'){
+                $(this).removeClass("rotating").children("audio").get(0).pause();
+                playing = 'off';
+            }else{
+                $(this).addClass("rotating").children("audio").get(0).play();
+                playing = 'on';
+            }
+        });
+
+        //slide2 baidumap
+        $("#map").height($("#map").width());
+        function showMap(){
+            var lont=0.0,hont=0.0;
+            var noPont=false;
+            lont=111.73225;
+            hont=40.826618;
+            var mappoint = new BMap.Point(lont, hont)
+            var map = new BMap.Map("map_container");
+            map.centerAndZoom(mappoint, 14);
+            map.addControl(new BMap.ZoomControl());
+            map.panTo(136,128);
+            if(!noPont){
+                var marker = new BMap.Marker(mappoint);// 创建标注
+                map.addOverlay(marker);
+                var infoWindow1 = new BMap.InfoWindow("&#28180;&#27665;&#26032;&#26449;&#23637;&#19996;&#36335;");
+                marker.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+            }
         }
+        showMap();
+
 
 
 
