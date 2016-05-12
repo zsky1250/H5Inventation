@@ -56,7 +56,49 @@
 
 
         </div>
-        <div class="swiper-slide">Slide 2</div>
+        <div id="slide2" class="swiper-slide" style="background: cadetblue">
+            <div id="list-wrapper" style="height: 80%;width: 90%;position: absolute;top:10%;left: 5%;overflow:hidden">
+                <div id="list">                <span>I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
+
+1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
+2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
+3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
+
+
+If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
+
+1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
+2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
+3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
+
+
+If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
+
+1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
+2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
+3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
+
+
+If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
+
+1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
+2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
+3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
+
+
+If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
+
+1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
+2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
+3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
+
+
+If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.</span>
+                </div>
+            </div>
+        </div>
+
+
         <div class="swiper-slide">Slide 3</div>
     </div>
     <!-- 如果需要分页器 -->
@@ -79,20 +121,32 @@
 <script>
 
     $(document).ready(function () {
+        var divScorllingStrat = null;
+        var offset = 0;
+        var threshold_bottom = -$("#list").height()+$("#list-wrapper").height();
+        var threshold_top = 0;
         var mySwiper = new Swiper ('.swiper-container', {
             direction: 'vertical',
-//            longSwipes: true,//支持长慢滑动
-//          longSwipesRatio : 0.1,//支持长滑动的情况下，滑动至少百分之多少长度会触发翻页 0.5-0.1 默认0.5
-            longSwipesMs : 1000,//滑动操作持续多长时间算常翻页
-
+//            shortSwipes:false,//短滑动
+            longSwipes: false,//支持长慢滑动
+            longSwipesRatio : -0.5,//支持长滑动的情况下，滑动至少百分之多少长度会触发翻页 0.5-0.1 默认0.5
+            longSwipesMs : 300,//滑动操作持续多长时间算常翻页
+            touchRatio:1,
             // 如果需要分页器
             pagination: '.swiper-pagination',
             paginationType : 'custom',
+
+            // 如果需要前进后退按钮
+//            nextButton: '.swiper-button-next',
+//            prevButton: '.swiper-button-prev',
+
+            // 如果需要滚动条
+//            scrollbar: '.swiper-scrollbar',
             paginationCustomRender: function (swiper, current, total) {
-               var scaleX = current / total,scaleY = 1;
-               $("#progressCustom").transform('translate3d(0,0,0) scaleX(' + scaleX + ') scaleY(' + scaleY + ')').transition(300);
-               $("#currentFraction").text(current);
-               $("#totalFraction").text(total);
+                var scaleX = current / total,scaleY = 1;
+                $("#progressCustom").transform('translate3d(0,0,0) scaleX(' + scaleX + ') scaleY(' + scaleY + ')').transition(300);
+                $("#currentFraction").text(current);
+                $("#totalFraction").text(total);
             },
 
             onInit: function(swiper){ //Swiper2.x的初始化是onFirstInit
@@ -101,15 +155,71 @@
             },
             onSlideChangeEnd: function(swiper){
                 swiperAnimate(swiper); //每个slide切换结束时也运行当前slide动画
+//                if(swiper.activeIndex==1){
+//                    swiper.lockSwipes();
+//                }
+                if(swiper.activeIndex==1){
+                    swiper.params.touchRatio = 0.001;
+                }else{
+                    swiper.params.touchRatio = 1;
+                }
+            },
+            onTouchMove: function(swiper, event){
+                if(swiper.activeIndex==1){
+                    if($(event.target).closest("#list-wrapper").length>0){
+                        $("#list").transform('translate3d(0px, ' + (offset+swiper.touches.diff) + 'px, 0px)');
+                        console.log("offset:"+offset+"step:"+(swiper.touches.diff));
+                    }
+                }
+            },
+            onTouchEnd : function(swiper,event){
+                if(swiper.activeIndex==1){
+                    offset+=swiper.touches.diff;
+                    console.log("final:"+offset);
+
+                    if(offset>threshold_top){
+                        offset=threshold_top;
+                        $("#list").transform('translate3d(0px,'+offset+'px, 0px)');
+                        console.log("offset>0");
+                    }else if(offset<threshold_bottom){
+                        offset = threshold_bottom;
+                        $("#list").transform('translate3d(0px, ' + offset + 'px, 0px)');
+                        console.log("height:"+offset+"offset<height");
+                    }
+                }
             }
 
-            // 如果需要前进后退按钮
-//            nextButton: '.swiper-button-next',
-//            prevButton: '.swiper-button-prev',
 
-            // 如果需要滚动条
-//            scrollbar: '.swiper-scrollbar',
-        })
+        });
+
+        function isInScrollingDiv(target){
+            return $(target).closest("#list-wrapper").length>0;
+        }
+
+
+        var zSwiper = function(options){
+            var DEFAULTS = {
+                touchRatio : 0.5,
+                swiper : mySwiper
+            };
+
+//            this.stopTouchRatio(){
+//                this.swiper.param.touchRatio = 0;
+//            };
+//
+//            this.recoveryTouchRatio(){
+//                this.swiper.params.touchRatio = DEFAULTS.touchRatio;
+//            };
+        }
+
+
+
+
+
+
+//        $("#content").on('touchmove',function(e){
+//            alert("sdf");
+//        })
     })
 
 </script>
