@@ -74,7 +74,10 @@
             <div id="menu" class="swiper-container">
                 <div class="swiper-wrapper">
                     <div id="menuSlide1" class="swiper-slide">
-                        slide1
+                        <div class="menuTop"><span>xxx饭店菜谱</span></div>
+                        <div class="menuLeft"></div>
+                        <div class="menuRight"></div>
+                        <div class="menuBottom"></div>
                     </div>
                     <div id="menuSlide2" class="swiper-slide">
                         slide2
@@ -190,7 +193,7 @@
             // 如果需要分页器
             pagination: '.swiper-pagination',
             paginationType : 'custom',
-            initialSlide :1,
+            initialSlide :2,
 
             paginationCustomRender: function (swiper, current, total) {
                 var scaleX = current / total,scaleY = 1;

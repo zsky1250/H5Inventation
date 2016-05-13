@@ -50,18 +50,7 @@ html, body{
   background: #fff;
 
   /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+  .VCenter;
 }
 
 .swiper-slide>div{
@@ -131,11 +120,27 @@ html, body{
   font-weight: bold;
 }
 
-.absoluteCenter(@width){
+.HCenter(@width){
   left:50%;
   margin-left:-@width/2;
   width:@width;
 }
+
+.VCenter(){
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
 
 //**************slide1***************************
 #slide1{
@@ -164,13 +169,13 @@ html, body{
 
   .time{
     top:20%;
-    .absoluteCenter(280px);
+    .HCenter(280px);
     color:#785805;
   }
 
   .room{
     top:57%;
-    .absoluteCenter(280px);
+    .HCenter(280px);
     color: #225801;
   }
 
@@ -179,13 +184,13 @@ html, body{
   .location-pic1 {
     top:25%;
     height: 30%;
-    .absoluteCenter(70%);
+    .HCenter(70%);
   }
 
   .location-pic2 {
     top:62%;
     height: 30%;
-    .absoluteCenter(70%);
+    .HCenter(70%);
   }
 
   .xiangyue{
@@ -252,28 +257,47 @@ html, body{
 #slide3{
   text-align: center;
   font-size: 18px;
-  background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  #menu{
+  &>#menu{
     top:0;
     left:0;
     width: 100%;
-    height: 100%;
     #menuSlide1{
-      background: blue;
+      &>.menuTop{
+          top:0;
+          left:0;
+          width: 100%;
+          height:8%;
+          .VCenter;
+          border-bottom: 1px solid #b5b5b5;
+          background: green;
+          color:#fff;
+          &>span{
+            vertical-align: middle;
+          }
+      }
+      .menuLeft{
+        width: 20%;
+        height: 84%;
+        top:8%;
+        left:0;
+        border-right:1px solid #b5b5b5;
+      }
+      .menuRight{
+        width: 80%;
+        height: 84%;
+        top:8%;
+        right:0;
+        border-right:1px solid #b5b5b5;
+      }
+      .menuBottom{
+        bottom:0;
+        left:0;
+        width: 100%;
+        height: 8%;
+        background: green;
+      }
     }
-    #menuSlide2{
+    &>#menuSlide2{
       background: yellow;
     }
   }
@@ -285,7 +309,7 @@ html, body{
   .diantuan{
     top:8%;
     height: 30%;
-    .absoluteCenter(45%);
+    .HCenter(45%);
     &>img{
       width: 100%;
       height: auto;
@@ -294,12 +318,12 @@ html, body{
   .jingxinshenghuo{
       top:35%;
       height: 30px;
-    .absoluteCenter(80%);
+    .HCenter(80%);
 
   }
   .line{
     top:35%;
-    .absoluteCenter(80%);
+    .HCenter(80%);
     img{
       width: 100%;
       height: auto;
@@ -308,15 +332,15 @@ html, body{
   .fangxinjue{
     top:42%;
     height: 30px;
-    .absoluteCenter(80%);
+    .HCenter(80%);
   }
   .bendi{
     top:55%;
-    .absoluteCenter(60%);
+    .HCenter(60%);
   }
   .weixinguanzhu{
     top:60%;
-    .absoluteCenter(90%);
+    .HCenter(90%);
   }
   .hand{
     top:75%;
