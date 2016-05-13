@@ -17,7 +17,7 @@
     <script type="text/javascript" src="http://api.map.baidu.com/getscript?type=quick&file=feature&ak=C7483ab05109bc4fd92aa64babec365c&t=20140109092002"></script>
 </head>
 <body>
-<div class="swiper-container">
+<div id="main" class="swiper-container">
     <div class="swiper-wrapper">
         <div id="slide1" class="swiper-slide">
 
@@ -70,47 +70,59 @@
 
             </div>
         </div>
-        <div id="slide3" class="swiper-slide" style="background: cadetblue">
-            <div id="list-wrapper" style="height: 80%;width: 90%;position: absolute;top:10%;left: 5%;overflow:hidden">
-                <div id="list">                <span>I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
-
-1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
-2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
-3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
-
-
-If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
-
-1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
-2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
-3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
-
-
-If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
-
-1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
-2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
-3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
-
-
-If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
-
-1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
-2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
-3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
-
-
-If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.
-
-1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.
-2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.
-3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.
-
-
-If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.</span>
+        <div id="slide3" class="swiper-slide">
+            <div id="menu" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div id="menuSlide1" class="swiper-slide">
+                        slide1
+                    </div>
+                    <div id="menuSlide2" class="swiper-slide">
+                        slide2
+                    </div>
                 </div>
             </div>
         </div>
+
+
+            <!--<div id="list-wrapper" style="height: 80%;width: 90%;position: absolute;top:10%;left: 5%;overflow:hidden">-->
+                <!--<div id="list">                <span>I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.-->
+
+<!--1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.-->
+<!--2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.-->
+<!--3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.-->
+
+
+<!--If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.-->
+
+<!--1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.-->
+<!--2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.-->
+<!--3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.-->
+
+
+<!--If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.-->
+
+<!--1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.-->
+<!--2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.-->
+<!--3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.-->
+
+
+<!--If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.-->
+
+<!--1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.-->
+<!--2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.-->
+<!--3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.-->
+
+
+<!--If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.I found a solution for this that involves nested dynamic panels. Take a look at the attached RP file.-->
+
+<!--1. Create a dynamic panel at the width you want your actual visible content. Set this one to Never Show Scrollbars.-->
+<!--2. Inside that, create a nested dynamic panel that is wider than the main dynamic panel's width. Set this one to Show Vertical Scrollbars as needed.-->
+<!--3. Inside this 2nd level dynamic panel, you can put your content that will scroll. Make sure it's longer than the panel height.-->
+
+
+<!--If you want this to swipe horizontally, just use the horizontal settings instead of the vertical that I used here in my example.</span>-->
+                <!--</div>-->
+            <!--</div>-->
         <div id="slide4" class="swiper-slide">
             <div class="diantuan move" effect="zoomIn" delay="0.2s">
                 <img src="../res/img/diantuan.png">
@@ -168,7 +180,7 @@ If you want this to swipe horizontally, just use the horizontal settings instead
         var offset = 0;
         var threshold_bottom = -$("#list").height()+$("#list-wrapper").height();
         var threshold_top = 0;
-        var mySwiper = new Swiper ('.swiper-container', {
+        var mainSwiper = new Swiper ('#main', {
             direction: 'vertical',
 //            shortSwipes:false,//短滑动
             longSwipes: false,//支持长慢滑动
@@ -178,14 +190,8 @@ If you want this to swipe horizontally, just use the horizontal settings instead
             // 如果需要分页器
             pagination: '.swiper-pagination',
             paginationType : 'custom',
-            initialSlide :3,
+            initialSlide :1,
 
-            // 如果需要前进后退按钮
-//            nextButton: '.swiper-button-next',
-//            prevButton: '.swiper-button-prev',
-
-            // 如果需要滚动条
-//            scrollbar: '.swiper-scrollbar',
             paginationCustomRender: function (swiper, current, total) {
                 var scaleX = current / total,scaleY = 1;
                 $("#progressCustom").transform('translate3d(0,0,0) scaleX(' + scaleX + ') scaleY(' + scaleY + ')').transition(300);
@@ -234,7 +240,8 @@ If you want this to swipe horizontally, just use the horizontal settings instead
 
 
         });
-
+        var menuSwiper = new Swiper ('#menu',{
+        });
         function isInScrollingDiv(target){
             return $(target).closest("#list-wrapper").length>0;
         }
@@ -279,7 +286,7 @@ If you want this to swipe horizontally, just use the horizontal settings instead
                 marker.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
             }
         }
-        showMap();
+//        showMap();
 
 
 
