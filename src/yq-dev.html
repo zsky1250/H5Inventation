@@ -123,7 +123,7 @@
                                         <li class="food-up">120人点过</li>
                                     </ul>
                                 </li>
-                                <ul class="food-list-item">
+                                <li class="food-list-item">
                                     <ul name="food2" class="food-item">
                                         <li class="food-quantity"><span class="plus"></span><span class="num">  </span><span class="minus"></span></li>
                                         <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
@@ -145,31 +145,29 @@
                                         <li class="food-price"><span>18</span>元</li>
                                         <li class="food-up">120人点过</li>
                                     </ul>
-                                </ul>
+                                </li>
                             </div>
                         </div>
                         <div class="menu-bottom">
-                            <li class="ordered">已选 <span id="totalQuantity" class="total-quantity"></span> 份。总价 <span id="totalPrice" class="total-price"></span> 元</li>
+                            <li class="ordered">已选 <span id="totalQuantity" class="total-quantity"></span> 总价 <span id="totalPrice" class="total-price"></span></li>
                             <li class="ok-btn"><span id="OK">我点好了</span></li>
                         </div>
                     </div>
                     <div id="menuSlide2" class="swiper-slide">
                         <div class="menu-top"><span id="back" class="menu-back">返 回</span><span>购物车</span></div>
-                        <div class="make-order"><span>请叫服务员下单：</span><span>共计</span><span id="detailPrice">50元</span></div>
+                        <div class="make-order"><span>请叫服务员下单：</span><span>共计</span><span id="detailPrice" class="total-price">50元</span></div>
                         <div id="orderDetailWrapper" class="order-detail">
                             <div id="orderDetails">
                                 <div class="my-order"><span>我的订单</span><span id="goOn">继续点单</span><span id="clearAll">清空</span></div>
                                 <div class="order-detail-name"><span>详细信息</span></div>
                                 <div class="order-detail-list">
                                     <ul id="orderDetailList">
-                                        <li><span class="item">sdfsdf详细信息详细信息详细信息详细信息详细信息详细信息</span><span class="cancel"></span></li>
-                                        <li><span class="item">sdfsdf详细信息详细信息详细信息详细信息详细信息详细信息</span><span class="cancel"></span></li>
-                                        <li><span class="item">sdfsdf详细信息详细信息详细信息详细信息详细信息详细信息</span><span class="cancel"></span></li>
-                                        <li><span class="item">sdfsdf详细信息详细信息详细信息详细信息详细信息详细信息</span><span class="cancel"></span></li>
-                                        <li><span class="item">sdfsdf详细信息详细信息详细信息详细信息详细信息详细信息</span><span class="cancel"></span></li>
+                                        <li><span class="food-name">水电费</span><span class="cancel"></span><span class="food-quantity">123.5元</span><span class="food-price">23份</span></li>
+                                        <li><span class="food-name">水电费</span><span class="cancel"></span><span class="food-quantity">123.5元</span><span class="food-price">23份</span></li>
+                                        <li><span class="food-name">水电费</span><span class="cancel"></span><span class="food-quantity">123.5元</span><span class="food-price">23份</span></li>
                                     </ul>
                                 </div>
-                                <div class="order-detail-form">
+                                <div id="orderDetailForm" class="order-detail-form">
                                     <li><label>就餐日期</label>
                                         <select>
                                             <option selected value="1">1月1日</option>
@@ -247,7 +245,6 @@
 
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -353,7 +350,6 @@
                     if($(event.target).closest("#foodListWrapper").length>0){
                         inScolling=1;
                         $("#foodList").transform('translate3d(0px, ' + (offset+swiper.touches.diff) + 'px, 0px)');
-                        console.log("offset:"+offset+"step:"+(swiper.touches.diff));
                     }else if($(event.target).closest("#orderDetailWrapper").length>0){
                         inScolling=2;
                         $("#orderDetails").transform('translate3d(0px, ' + (offset1+swiper.touches.diff) + 'px, 0px)');
@@ -363,23 +359,35 @@
             onTouchEnd : function(swiper,event){
                 if(swiper.activeIndex==menuIndex){
                     if(inScolling==1){
-                        offset+=swiper.touches.diff;
-                        console.log("final:"+offset);
-                        if(offset>threshold_top){
+
+                        if(threshold_bottom>0){
+                            //内容少于包裹div
                             offset=threshold_top;
                             $("#foodList").transform('translate3d(0px,'+offset+'px, 0px)');
-                        }else if(offset<threshold_bottom){
-                            offset = threshold_bottom;
-                            $("#foodList").transform('translate3d(0px, ' + offset + 'px, 0px)');
+                        }else{
+                            offset+=swiper.touches.diff;
+                            if(offset>threshold_top){
+                                offset=threshold_top;
+                                $("#foodList").transform('translate3d(0px,'+offset+'px, 0px)');
+                            }else if(offset<threshold_bottom){
+                                offset = threshold_bottom;
+                                $("#foodList").transform('translate3d(0px, ' + offset + 'px, 0px)');
+                            }
                         }
                     }else if(inScolling==2){
-                        offset1+=swiper.touches.diff;
-                        if(offset1>threshold_top){
+                        if(threshold_bottom2>0){
+                            //内容少于包裹div
                             offset1=threshold_top;
-                            $("#orderDetails").transform('translate3d(0px,'+offset1+'px, 0px)');
-                        }else if(offset1<threshold_bottom2){
-                            offset1 = threshold_bottom2;
-                            $("#orderDetails").transform('translate3d(0px, ' + offset1 + 'px, 0px)');
+                            $("#orderDetails").transform('translate3d(0px,'+offset+'px, 0px)');
+                        }else {
+                            offset1 += swiper.touches.diff;
+                            if (offset1 > threshold_top) {
+                                offset1 = threshold_top;
+                                $("#orderDetails").transform('translate3d(0px,' + offset1 + 'px, 0px)');
+                            } else if (offset1 < threshold_bottom2) {
+                                offset1 = threshold_bottom2;
+                                $("#orderDetails").transform('translate3d(0px, ' + offset1 + 'px, 0px)');
+                            }
                         }
                     }
                     inScolling==0;
@@ -428,10 +436,15 @@
 
         //menu
         var foodItems = {};
+//        var orderItems = {};
+        var total = {price:0,quantity:0};
         function initMenu(){
-            $('#category').on('click.zui','li',function(){
-                $(this).addClass('active').sibling("li").hide();
-                $('#foodList').children('.food-list-item').eq(index).show().siblings('li').hide();
+            //foodItems[id].handler 缓存同一菜品再dom出现多次的情况，如果能保证不重复，这里可以去掉handler以作优化
+
+            $('#category').on('click.zui','li',function(index){
+                $(this).addClass('selected').siblings("li").removeClass('selected');
+                $('#foodList').children('.food-list-item').eq($(this).index('li')).show().siblings('li').hide();
+                changeFoodContentHeight();
             });
 
 
@@ -439,83 +452,191 @@
                 var id = $(this).attr('name');
                 if(!id&&id.trim()=='') id=index;
                 if($.isEmptyObject(foodItems[id])){
-                    foodItems[id] = {};
+                    foodItems[id] = {$Quantityhandlers:new Array()};
+                    var price,quantity
                     $(this).children('li').each(function(){
                        switch ($(this).attr('class')){
                            case 'food-name':
                                foodItems[id].foodname = $(this).html();
                                break;
                            case 'food-price':
-                                foodItems[id].price = $(this).children('span').html();
+                                 price = $(this).children('span').html().trim();
+                                 price = price!=''?parseFloat(price):0.0;
+                                 foodItems[id].price = price;
                                break;
                            case 'food-quantity':
-                                foodItems[id].quantity = $(this).children('span.num').html();
-                                foodItems[id].$handlers = new Array();
-                                foodItems[id].$handlers.push($(this));
+                                quantity = $(this).children('span.num').html().trim();
+                                quantity = quantity!=''?parseInt(quantity):0;
+                                foodItems[id].quantity = quantity;
+                                foodItems[id].$Quantityhandlers.push($(this));
                                break;
                        }
+
                     });
                 }else{
-                    foodItems[id].$handlers.push($(this).children('li.food-quantity'));
+                    foodItems[id].$Quantityhandlers.push($(this).children('li.food-quantity'));
                 }
             });
 
-            //隐藏减号
+            //后续遍历元素，加入handler
             $.each(foodItems,function(key,val){
-                if(val.quantity.trim()=='') val.quantity=0;
                 if(val.quantity==0){
                     //数量为0，隐藏减号和数量
-                   $.each(val.$handlers,function(index,item){
+                   $.each(val.$Quantityhandlers,function(index, item){
                        item.children('span.add,span.minus').hide();
                    });
+                }else{
+                    total.price+=val.quantity*val.price;
+                    total.quantity+=val.quantity;
                 }
             });
+
+            //初始化动态元素显示
+            buildOrderbyFoodItem();
+            changeTotalDisplay();
 
             //+事件处理
             $('#foodListWrapper').on('click.zui','span.plus',function(){
-               var itemIndex = $(this).parentsUntil('.food-list-item','[name]').attr('name'),
-                   quantity = ++foodItems[itemIndex].quantity;
-                $.each(foodItems[itemIndex].$handlers,function(){
-                    if(quantity==1){
-                        //显示减号和num
-                        $(this).children('span.minus,span.num').show();
-                    }
-                    $(this).children('span.num').html(quantity);
-
-                });
+               plusQuantity($(this).parentsUntil('.food-list-item','[name]'));
             });
-
 
             //-事件处理
             $('#foodList').on('click.zui','span.minus',function(){
-                var itemIndex = $(this).parentsUntil('.food-list-item','[name]').attr('name'),
-                    quantity = --foodItems[itemIndex].quantity;
-                $.each(foodItems[itemIndex].$handlers,function(){
-                    if(quantity== 0){
-                        //隐藏减号和num
-                        $(this).children('span.minus,span.num').hide();
-                    }
-                    $(this).children('span.num').html(quantity)
-                });
+                minusQuantity($(this).parentsUntil('.food-list-item','[name]'));
             });
 
-        };
 
-        initMenu();
-
-        function initMenuSlide(){
-             $('#OK').click(function(){
+            //注册我点好了OK btn
+            $('#OK').click(function(){
+                buildOrderbyFoodItem();
                 menuSwiper.unlockSwipes();
                 menuSwiper.slideNext();
                 menuSwiper.lockSwipes();
-             });
-            $('#back').click(function(){
+            });
+
+   /**____________order*************************/
+            $("#orderDetailList").on('click.zui','span.cancel',function(){
+//                for food-item-list
+                var $orderItem = $(this).parent();
+                clearQuantity($orderItem);
+//                for order-list
+                $orderItem.remove();
+            });
+
+            $('#back,#goOn').click(function(){
                 menuSwiper.unlockSwipes();
                 menuSwiper.slidePrev();
                 menuSwiper.lockSwipes();
             });
+
+            $('#clearAll').click(function(){
+                $("#orderDetailList").children("li").each(function(){
+                    clearQuantity($(this));
+                }).remove();
+            });
+
+            $('#orderSubmit').click(function(){
+                hideDetailForm();
+            });
+        };
+
+        function plusQuantity($foodItem){
+            var index = $foodItem.attr('name');
+            total.price+=foodItems[index].price;
+            total.quantity++;
+            changeQuantityDisplay(index,++foodItems[index].quantity,'plus');
         }
-        initMenuSlide();
+
+        function minusQuantity($foodItem){
+            var index = $foodItem.attr('name');
+            total.price-=foodItems[index].price;
+            total.quantity--;
+            changeQuantityDisplay(index,--foodItems[index].quantity,'minus');
+        }
+
+        function clearQuantity($foodItem){
+            var index = $foodItem.attr('name');
+            total.price -= foodItems[index].quantity*foodItems[index].price;
+            changeQuantityDisplay(index,0,'clear');
+        }
+
+        function changeQuantityDisplay(index,num,op){
+            $.each(foodItems[index].$Quantityhandlers,function(){
+                if(!op){
+                    if(num==1&&op=='plus'){
+                        $(this).children('span.minus,span.num').show();
+                    }else if(op=='clear'||(num==0&&op=='minus')){
+                        $(this).children('span.minus,span.num').hide();
+                    }
+                }else{
+                    if(num>0){
+                         $(this).children('span.minus,span.num').show();
+                    }else{
+                         $(this).children('span.minus,span.num').hide();
+                    }
+                }
+                $(this).children('span.num').html(num)
+            });
+            changeTotalDisplay();
+        }
+
+        function changeTotalDisplay(){
+            $("span.total-price","#menu").html(total.price+" 元");
+            $("span.total-quantity","#menu").html(total.quantity+" 份");
+        }
+
+        function buildOrderbyFoodItem(){
+//            orderItems = {};
+            var html = '';
+            $.each(foodItems,function(key,val){
+                if(val.quantity>0){
+//                    orderItems[key]={
+//                        foodname : val.foodname,
+//                        price : val.price,
+//                        quantity : val.quantity,
+//                    };
+                    html+='<li name="'+key+'"><span class="food-name">'+val.foodname+'</span><span class="cancel"></span><span class="food-quantity">'+val.price+'元</span><span class="food-price">'+val.quantity+'份</span></li>';
+                }
+            });
+            if(html!=''){
+                $("#orderDetailList").html(html);
+            }
+        }
+
+        function hideDetailForm(){
+            $("#orderDetailForm").hide();
+            $("#orderDetailList").find('span.cancel').hide();
+            changeOrderContentHeight();
+        }
+
+        function changeFoodContentHeight(){
+            threshold_bottom = -$("#foodList").height()+$("#foodListWrapper").height();
+            $("#foodList").transform('translate3d(0px,0px, 0px)');
+        }
+
+        function changeOrderContentHeight() {
+            threshold_bottom2 = -$("#orderDetails").height()+$("#orderDetailWrapper").height();
+            $("#orderDetails").transform('translate3d(0px,0px, 0px)');
+        }
+
+        /**
+         * 这里是动态更改orderItems，点返回批量而更新到foodItems，然后再调整foodlist显示
+         * */
+        function synchronizeFoodByOrderItems(){
+
+        }
+
+        function goToOrderView(){
+
+        }
+
+        function backToMenuView(){
+
+        }
+
+        initMenu();
+
+
 
 
 
