@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>邀请函2.0</title>
+    <!--<meta id="viewPort" name="viewport"-->
+    <!--content="width=320, initial-scale=1, maximum-scale=1, user-scalable=no" servergenerated="true"/>-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" href="../res/css/yq.css"/>
+
+    <script src="../res/js/jquery-1.11.3.min.js"></script>
+    <script src="../res/plugins/swiper-3.3.1/swiper.jquery.min.js"></script>
+    <script src="../res/plugins/swiper-3.3.1/swiper.animate1.0.2.min.js"></script>
+    <script src="../res/js/ZUI-yq-pro.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=gSTmHrK8gvFvHe167KA5nEcTbUmlHfeF"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/getscript?type=quick&file=feature&ak=gSTmHrK8gvFvHe167KA5nEcTbUmlHfeF"></script>-->
+
+</head>
+<body>
+<div id="main" class="swiper-container">
+    <div class="swiper-wrapper">
+        <div id="slide1" class="swiper-slide">
+
+            <div class="host">
+                <span id="host">林先生</span>
+                <span style="">邀请</span>
+            </div>
+
+            <div class="qin move"  effect="fadeIn" delay="0.6s">
+                <span>亲</span>
+            </div>
+
+            <div class="pic location-pic1 move"  effect="fadeInDown"  delay="1.0s">
+                <img src="../res/img/user_pic_1.JPG"/>
+            </div>
+
+            <div class="time move"  effect="bounceInUp" duration="2.0s" delay="1.3s">
+                <span>16年1月1号中午有空么</span>
+            </div>
+
+            <div class="room move"  effect="bounceInUp" duration="2.0s" delay="2.0s">
+                <span>我订了西贝西北菜-兴泰店202雅间</span>
+            </div>
+
+            <div class="pic location-pic2 move"  effect="fadeInUp" delay="2.5s">
+                <img src="../res/img/user_pic_2.JPG"/>
+            </div>
+
+            <div class="xiangyue move"  effect="fadeIn" delay="3.5s">
+                <span class="move"  effect="wobble" delay="4.0s">想约</span>
+            </div>
+            <div class="ni move"  effect="bounceInLeft" delay="3s">
+                <span class="move"  effect="rubberBand" delay="4.5s">你</span>
+            </div>
+            <div class="yiqizuozuo move"  effect="fadeInRight" delay="3s">
+                <span class="move"  effect="bounce" delay="4.5s">一起坐坐</span>
+            </div>
+
+
+
+        </div>
+        <div id="slide2" class="swiper-slide">
+            <div class="yellow-square move"  effect="zoomIn" delay="0.5s">
+                <span>要认准饭店地址哦</span>
+            </div>
+            <div id="location"  class="location move" effect="fadeIn" delay="1.2s">
+                地址：<br/><span>内蒙古饭店东巷塞上府东</span>
+            </div>
+            <div id="map" class="map move" effect="bounceIn" duration="1.0s" delay="1.8s">
+
+            </div>
+        </div>
+        <div id="slide3" class="swiper-slide">
+            <div id="menu" class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div id="menuSlide1" class="swiper-slide">
+                        <div class="menu-top"><span>xxx饭店菜谱</span></div>
+                        <div id="category" class="menu-left">
+                            <ul>
+                                <li class="selected">全部</li>
+                                <li>东北菜</li>
+                                <li>西北菜</li>
+                                <li>咸菜</li>
+                                <li>你好</li>
+                            </ul>
+                        </div>
+                        <div id="foodList" class="menu-right">
+                            <li class="food-list-item">
+                                <ul name="food1" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">2</span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">鱼香肉丝</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                                <ul name="food2" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">5</span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">辣子肉丁</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                                <ul name="food3" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">  </span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">小鸡炖蘑菇</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                                <ul name="food2" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">  </span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">辣子肉丁</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                                <ul name="food3" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num"></span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">小鸡炖蘑菇</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                            </li>
+                            <li class="food-list-item">
+                                <ul name="food2" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">  </span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">辣子肉丁</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                                <ul name="food3" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">  </span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">小鸡炖蘑菇</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                                <ul name="food2" class="food-item">
+                                    <li class="food-quantity"><span class="plus"></span><span class="num">  </span><span class="minus"></span></li>
+                                    <li class="food-img"><img src="../res/img/yhdefault.jpg"/></li>
+                                    <li class="food-name">辣子肉丁</li>
+                                    <li class="food-price"><span>18</span>元</li>
+                                    <li class="food-up">120人点过</li>
+                                </ul>
+                            </li>
+                        </div>
+                        <div class="menu-bottom">
+                            <li class="ordered">已选 <span id="totalQuantity" class="total-quantity"></span> 总价 <span id="totalPrice" class="total-price"></span></li>
+                            <li class="ok-btn"><span id="OK">我点好了</span></li>
+                        </div>
+                    </div>
+                    <div id="menuSlide2" class="swiper-slide">
+                        <div class="menu-top"><span id="back" class="menu-back">返 回</span><span>购物车</span></div>
+                        <div class="make-order"><span>请叫服务员下单：</span><span>共计</span><span id="detailPrice" class="total-price">50元</span></div>
+                        <div id="orderDetails" class="order-detail">
+                            <div class="my-order"><span>我的订单</span><span id="goOn">继续点单</span><span id="clearAll">清空</span></div>
+                            <div class="order-detail-name"><span>详细信息</span></div>
+                            <div class="order-detail-list">
+                                <ul id="orderDetailList">
+                                    <li><span class="food-name">水电费</span><span class="cancel"></span><span class="food-quantity">123.5元</span><span class="food-price">23份</span></li>
+                                    <li><span class="food-name">水电费</span><span class="cancel"></span><span class="food-quantity">123.5元</span><span class="food-price">23份</span></li>
+                                    <li><span class="food-name">水电费</span><span class="cancel"></span><span class="food-quantity">123.5元</span><span class="food-price">23份</span></li>
+                                </ul>
+                            </div>
+                            <div id="orderDetailForm" class="order-detail-form">
+                                <li><label>就餐日期</label>
+                                    <select>
+                                        <option selected value="1">1月1日</option>
+                                        <option selected value="2">1月2日</option>
+                                        <option selected value="3">1月3日</option>
+                                        <option selected value="4">1月4日</option>
+                                    </select>
+                                </li>
+                                <li><label>预定桌号</label>
+                                    <select>
+                                        <option selected value="1">1</option>
+                                        <option selected value="2">2</option>
+                                        <option selected value="3">3</option>
+                                        <option selected value="4">4</option>
+                                    </select>
+                                </li>
+                                <li><label>预定人数</label>
+                                    <INPUT type="text" placeholder="如：12" value="" />
+                                </li>
+                                <li><label>就餐时间</label>
+                                    <div class="time">
+                                        <select>
+                                            <option selected value="1" selected>时</option>
+                                            <option  value="2">2</option>
+                                            <option  value="3">3</option>
+                                            <option  value="4">4</option>
+                                        </select>
+                                        <select>
+                                            <option selected value="1" selected>分</option>
+                                            <option  value="2">2</option>
+                                            <option  value="3">3</option>
+                                            <option  value="4">4</option>
+                                        </select>
+                                    </div>
+                                </li>
+                                <li><label>最晚就餐时间</label>
+                                    <div class="time">
+                                        <select>
+                                            <option selected value="1" >时</option>
+                                            <option  value="2">2</option>
+                                            <option  value="3">3</option>
+                                            <option  value="4">4</option>
+                                        </select>
+                                        <select>
+                                            <option selected value="1" selected>分</option>
+                                            <option  value="2">2</option>
+                                            <option  value="3">3</option>
+                                            <option  value="4">4</option>
+                                        </select>
+                                    </div>
+                                </li>
+
+                                <li><label>用户姓名</label>
+                                    <INPUT type="tel" placeholder="如：王先生" value="" />
+                                </li>
+
+                                <li><label>联系电话</label>
+                                    <INPUT type="text" placeholder="如：134332" value="" />
+                                </li>
+
+                                <li><label>调剂</label>
+                                    <select>
+                                        <option selected value="0">不服从调剂</option>
+                                        <option selected value="1">服从调剂</option>
+                                    </select>
+                                </li>
+
+                                <li><label>备注说明</label>
+                                    <TEXTAREA name="rmrese.memo"  placeholder="忌口、发票抬头等"></TEXTAREA>
+                                </li>
+
+                                <li>
+                                    <span id="orderSubmit" class="order-submit">确定提交</span>
+                                </li>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="slide4" class="swiper-slide">
+            <div class="diantuan move" effect="zoomIn" delay="0.2s">
+                <img src="../res/img/diantuan.png">
+            </div>
+            <div class="jingxinshenghuo move" effect="slideInLeft" delay="1s">
+                <span>品 味 电 团 精 心 生 活</span>
+            </div>
+            <div class="line move" effect="zoomIn" delay="1.5s">
+                <img src="../res/img/horizen_line.png">
+            </div>
+            <div class="fangxinjue move" effect="slideInRight" delay="1s">
+                <span>喝 放 心 酒 选 九 联</span>
+            </div>
+            <div class="bendi move" effect="fadeInDownBig" delay="1.5s">
+                <span>内蒙古本地020</span>
+            </div>
+            <div class="weixinguanzhu move" effect="fadeInUpBig" delay="2s">
+                <span>微信关注“九联”米面油酒茶，20分钟送达</span>
+            </div>
+            <div class="hand move" effect="rotateInDownRight" delay="3s">
+                <img src="../res/img/hand.png">
+            </div>
+            <div class="guahaocha move" effect="flipInX" delay="3s">
+                <span>动动小手，刮好茶</span>
+            </div>
+        </div>
+
+
+
+    </div>
+    <!-- 如果需要分页器 -->
+    <div class="swiper-pagination">
+        <span id="progressCustom" class="progress"></span>
+        <span class="fraction"><span id="currentFraction"></span>/<span id="totalFraction"></span></span>
+    </div>
+    <!--向上箭头-->
+    <div class="up-arrow"></div>
+    <!--音乐播放-->
+    <div id="music" class="music rotating">
+        <audio loop="loops" src="../res/audio/bgmusic.mp3" id="bgmusic" autoplay="autoplay"></audio>
+    </div>
+    <!-- 如果需要导航按钮 -->
+    <!--<div class="swiper-button-prev"></div>-->
+    <!--<div class="swiper-button-next"></div>-->
+
+    <!-- 如果需要滚动条 -->
+    <!--<div class="swiper-scrollbar"></div>-->
+</div>
+
+
+<script>
+
+    $(document).ready(function () {
+        //百度地图
+        var map_center = $('#map').height()/2-35;
+        function showMap(){
+            var lont=0.0,hont=0.0;
+            var noPont=false;
+            lont=111.73225;
+            hont=40.826618;
+            var mappoint = new BMap.Point(lont, hont)
+            var map = new BMap.Map("map");
+            map.centerAndZoom(mappoint, 14);
+//            map.addControl(new BMap.ZoomControl());
+            map.addControl(new BMap.NavigationControl({type: BMAP_NAVIGATION_CONTROL_SMALL,offset: new BMap.Size(5, map_center)}));
+            map.panTo(136,128);
+            if(!noPont){
+                var marker = new BMap.Marker(mappoint);// 创建标注
+                map.addOverlay(marker);
+                var infoWindow1 = new BMap.InfoWindow("&#28180;&#27665;&#26032;&#26449;&#23637;&#19996;&#36335;");
+                marker.addEventListener("click", function(){this.openInfoWindow(infoWindow1);});
+            }
+        }
+        //初始化插件
+        var yq = new ZUI({
+            showMap:showMap
+        });
+
+    });
+
+</script>
+</body>
+</html>
